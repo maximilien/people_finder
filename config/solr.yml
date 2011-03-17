@@ -1,7 +1,11 @@
+# 
 # Config file for the acts_as_solr plugin.
-#
 # If you change the host or port number here, make sure you update 
 # them in your Solr config file
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+#
 
 development:
   url: http://localhost:8982/solr

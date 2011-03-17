@@ -1,3 +1,11 @@
+# 
+# Sets Facebooker for application (Development)
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+#
+
+
 development:
   api_key: b5654f706b65b2444d43181da40ec6b7
   secret_key: e0d983f5046d53af833bc5a8e6b2075a

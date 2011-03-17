@@ -1,3 +1,10 @@
+# 
+# Route definition for the project
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+#
+
 ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
   map.connect 'my/:action/:id', :controller => 'my'

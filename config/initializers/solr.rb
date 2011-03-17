@@ -1,4 +1,10 @@
+# 
 # Solr configurations
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+# 
+
 ENV['RAILS_ENV']  = (ENV['RAILS_ENV'] || 'development').dup 
 SOLR_PATH = "#{File.dirname(File.expand_path(__FILE__))}/../solr" unless defined? SOLR_PATH
 

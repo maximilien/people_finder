@@ -1,3 +1,10 @@
+# 
+# Sets Facebooker for application (Golden)
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+#
+
 development:
   api_key: 8090a7f445674bafcd40039ad728a4a5
   secret_key: c359dd3e8edae7194767c59b79e32309

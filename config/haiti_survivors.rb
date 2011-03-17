@@ -1,4 +1,9 @@
-# Sets up globally accessible configuration for the application
+# 
+# Sets up globally accessible configuration for the application (Production)
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+#
 
 VERSION_STRING = '1.1.1' unless defined? VERSION_STRING
 CANVAS_NAME = 'haiti_survivors' unless defined? CANVAS_NAME

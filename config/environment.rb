@@ -1,4 +1,10 @@
+# 
+# Environment definition for the application
 # Be sure to restart your server when you modify this file
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+#
 
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
