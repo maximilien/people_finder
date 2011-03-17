@@ -1,0 +1,8 @@
+<div class="locations">
+  <table class="maintable" width="100%" cellspacing="0">
+      <%= render :partial => 'table_header' %>
+      <% locations.each do |location| %>
+      <%= render :partial => 'locations/location', :locals => {:location => location} %>
+    <% end -%>
+</table>
+</div>

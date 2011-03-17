@@ -1,0 +1,9 @@
+<%= fb_title "Editing #{@friend.survivor.formatted_name}" %>
+
+<h3>Editing friend: <%= link_to @friend.survivor.formatted_name, @friend.survivor %></h3>
+
+<%= render :partial => 'friends/form', 
+           :locals => {:friend => @friend, 
+                       :submit_action => 'Update'} %>
+<hr/>
+<%= link_to 'Show', @friend %>

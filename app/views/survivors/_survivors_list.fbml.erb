@@ -1,0 +1,12 @@
+<div class="survivors">
+  <table class="maintable" width="100%" cellspacing="0">
+      <%= render :partial => 'survivors/table_header', 
+                 :locals => {:action => action} %>
+      <% survivors.each do |survivor| %>
+      <%= render :partial => 'survivors/survivor', 
+                 :locals => {:survivor => survivor} %>
+    <% end -%>
+</table>
+</div>
+<br/>
+<%= link_to 'New survivor or victim', new_survivor_path %>

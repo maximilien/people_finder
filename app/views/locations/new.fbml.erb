@@ -1,0 +1,6 @@
+<%= fb_title 'New location' %>
+
+<%= render :partial => 'locations/form', :locals => {:location => @location, 
+                                                     :form_action => 'Create'} %>
+<hr/>
+<%= link_to 'Show', @location %>

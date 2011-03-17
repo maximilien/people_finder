@@ -1,0 +1,19 @@
+<fb:subtitle seeallurl="<%= ibm_mentor_me_url %>"> 
+    <%= "#{app_name}" %> profile information
+</fb:subtitle>
+
+<style>
+h1 span, h1 img{
+  vertical-align:middle;
+}  
+</style>
+
+<h1><%= image_tag("haiti_survivors.jpg", :size => '30x30') %> <span><%= link_to "#{app_name}", haiti_quake_survivors_url %> </span></h1>
+
+<small>
+<%= site_blurb_short %>
+</small>
+
+<br/>
+
+<%= render :partial => 'profile_publisher/show', :locals => {:profile => profile, :app_name => app_name} %>

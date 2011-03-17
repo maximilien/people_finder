@@ -1,0 +1,7 @@
+<%= fb_title "#{app_name} profile for #{@profile.formatted_name}" %>
+
+<h3><%= "#{app_name} profile for #{@profile.formatted_name}" %></h3>
+
+<%= render :partial => 'profiles/show', :locals => {:profile => @profile} %>
+<hr/>
+<%= link_to 'Edit', edit_profile_path(@profile) if current_user.superuser? or current_user == @profile.user %>

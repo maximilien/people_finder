@@ -1,0 +1,8 @@
+<tr>
+<td style='width: 20%'><%= stat.created_at.strftime(fmt='%b %d @ %I:%M %p') %></td>
+<td><%= stat.users_count %></td>
+<td><%= stat.locations_count %></td>
+<td><%= stat.survivors_count %></td>
+<td><%= stat.survivor_updates_count %></td>
+<td><%= link_to 'Remove', :controller => 'stats', :action => 'remove', :id => stat.id %></td>
+</tr>

@@ -1,0 +1,60 @@
+<fb:title>Location information for <%= "#{location.name}" %></fb:title>
+
+<h3>
+<span style='font-size:15px;'><%= "#{location.name}" %></span>
+<small>
+<%= link_to 'edit', edit_location_path(location) %> info
+<% if location.duplicate? %>
+  <span style='color:#FF3030;font-size:12px;'>
+  [flagged as duplicate, <%= link_to 'remove flag', :controller => 'locations', :action => 'remove_duplicate', :id => location.id %>]
+  </span>
+<% end %>
+</small>
+</h3>
+
+<br/>
+
+<table border='0' width='100%'>
+<tr>
+<td valign='top'>
+<%= image_tag location.picture_url.strip, :size => '60x60' unless location.picture_url.nil? or location.picture_url.blank? %>
+<%= '<i>No photo</i>' if location.picture_url.nil? or location.picture_url.blank? %>
+<br/>
+<%= link_to 'Web site', location.web_site_url unless location.web_site_url.nil? or location.web_site_url.blank? %>
+<%= '<i>No Web site</i>' if location.web_site_url.nil? or location.web_site_url.blank? %>
+<br/>
+<p>
+<%= _fb_share_button :meta,
+                    :metas => [{:name => 'medium', :content => "blog"},
+                               {:name => 'title', :content => "#{location.name} in #{app_name} has #{location.survivors.size} survivors or victims"},
+                               {:name => 'description', :content => "Location #{h location.more_details.gsub("<br/>", " ").gsub("<b>", " ").gsub("</b>", " ")}" + "#{(location.description.nil? or location.description.blank?) ? "" : "\n#{location.description}"}"}],
+                    :links => [{:rel => 'target_url', :href => "#{haiti_quake_survivors_url}/locations/show/#{location.id}"}] %>
+</p>
+<p>
+  <b>Name:</b> <%=h location.name %><%= " (#{h location.nickname})" unless location.nickname.nil? or location.nickname.blank? %><br/>
+  <b>Kind:</b> <%=h location.kind %>
+</p>
+<p>
+  <b>Description:</b><br/> 
+  <small>
+  <%= (location.description.nil? or location.description.blank?) ? '<i>No description</i>' : h(location.description) %>
+  </small>
+</p>
+<p>
+  <b>City:</b> <%=h location.city %><br/>
+  <b>Country:</b> <%=h location.country %>
+</p>
+</td>
+<td>
+<div id='google-map' align='right'>
+<fb:iframe src='<%= "#{haiti_quake_survivors_raw_url}/locations/show_map/#{location.id}" %>' frameborder='0' width='585' height='390'>
+  <%= render :controller => 'locations', :action => 'show_map', :id => location.id %>
+</fb:iframe>
+</div>
+</td>
+</tr>
+</table>
+
+<p>
+Number of <%= link_to 'survivors and victims', :controller => 'locations', :action => 'survivors', :id => location.id %>: <%= location.survivors.size %> (<%= link_to 'click', :controller => 'locations', :action => 'survivors', :id => location.id %> to see list)
+</p>

@@ -1,0 +1,115 @@
+<% unless profile.user.nil? %>
+<p>
+<fb:profile-pic uid="<%= profile.user.facebook_id %>" linked="true" size='square' />
+</p>
+<% if profile.user.superuser? %>
+  <p><i>This user is a <%= app_name %> superuser!</i></p>
+<% end %>
+
+<p>
+Please complete your profile so that other users may connect with you without having to be your friend on Facebook.  You will be reminded until all (non-optional) are completed.
+</p>
+
+<p>
+Click to <%= link_to 'get data from Facebook', :controller => 'profiles', :action => 'get_data_from_facebook', :id => profile.id %> profile.  Only first name, last name, activities, and interests are carried over from your Facebook profile.  Also, you can optionally edit that info if you so desire.
+</p>
+<p>
+<small>
+Note that some info in your <%= app_name %> profile are not part of your Facebook profile and thus need to be added manually.  Please see our <%= link_to 'privacy policy', :controller => 'welcome', :action => 'privacy_policy', :popup => true %> for information on how the profile data you provide is treated.
+</small>
+<p>
+
+<hr/>
+
+<% end %>
+
+<% form_for(profile) do |f| %>
+  <%= f.error_messages %>
+
+  <% unless hidden_fields[:allow_comments] %>
+  <p>
+  <b>Allow comments? </b>
+  <%= f.check_box :allow_comments %> <small>i.e., let users comment on my profile, you can delete them</small>
+  </p>
+  <% end %>
+
+  <% unless hidden_fields[:share_info_with_all] %>
+  <p>
+    <span>Share info with all <%= app_name %> users </span><%= f.check_box :share_info_with_all %><br/>
+  </p>
+  <% end %>
+
+  <p>
+    <%= collection_select :profile, :salutation, Profile::SALUTATIONS, :to_s, :to_s, {:include_blank => true} %>
+    <b>First: </b>
+    <%= f.text_field :first_name, :size => 20 %>
+    <b>Middle: </b>
+    <%= f.text_field :middle_name, :size => 15 %>
+    <b>Last: </b>
+    <%= f.text_field :last_name, :size => 25 %>
+    <%= collection_select :profile, :suffix, Profile::SUFFIXES, :to_s, :to_s, {:include_blank => true} %>
+  </p>
+
+  <p>
+  <b>Nickname: </b>
+  <%= text_field :profile, :nickname, :size => 35 %><small>(optional)</small>
+  <b>Citizen of: </b>
+    <%= country_select :profile, :citizen_of, ['Haiti', 'United States', 'Canada', 'France'], {:include_blank => true} %><small>(optional)</small>
+  </p>
+
+  <p>
+  <% unless hidden_fields[:time_zone] %>
+    <b>Time zone: </b><%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, :default => "Eastern Time (US & Canada)" %>
+  <% end %>
+
+  <% unless hidden_fields[:country] %>
+    <b>Country</b>
+    <%= country_select :profile, :country, ['Haiti', 'United States', 'Canada', 'France'], {:include_blank => true} %><br/>
+  <% end %>
+  </p>
+  
+  <p>
+    <hr/>
+    <b>Email: </b>
+    <%= f.text_field :email, :size => 20 %><small>(optional)</small><br/>
+    <b>Mobile phone: </b>
+    <%= f.text_field :mobile_phone, :size => 15 %> <small>e.g., (123)456-7890 (optional)</small><br/>
+    <b>Home phone: </b>
+    <%= f.text_field :home_phone, :size => 16 %><small>(optional)</small>
+    <b>Work phone: </b>
+    <%= f.text_field :work_phone, :size => 17 %><small>(optional)</small>
+  </p>
+  
+  <% unless hidden_fields[:web_info] %>
+  <hr/>
+  <p>
+  <b>Twitter: </b>
+  <%= f.text_field :twitter, :size => 33 %><small>(optional)</small><br/>
+  <b>Web page: </b>
+  <%= f.text_field :web_site_url, :size => 40 %><small>(optional)</small><br/>
+  <b>Blog: </b>
+  <%= f.text_field :blog_url, :size => 44 %><small>(optional)</small><br/>
+  </p>
+  <% end %>
+  
+  <% unless hidden_fields[:about_yourself] %>
+  <hr/>
+  <p>
+    <b>About yourself</b> <small>e.g., what you can offer?, what you are looking for?, and so on (optional)</small><br />
+    <%= f.text_area :about_yourself, :rows => 7, :cols => 60 %>
+  </p>
+  <% end %>
+    
+  <% if current_user.superuser? and !profile.user.nil? %>
+    <p>
+      <b>Superuser</b>
+      <%= check_box :profile, :superuser %>
+    </p>
+  <% end %>
+
+  <% if add_action_button %>
+  <p>
+    <%= f.submit "#{submit_action}" %>
+  </p>
+  <% end %>
+<% end %>

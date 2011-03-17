@@ -1,0 +1,10 @@
+<br/>
+<h3>Manage survivors and victims <i>updates</i></h3>
+<br/>
+<%= render :partial => 'admin/survivor_updates', 
+           :locals => {:survivor_updates => survivor_updates} %>
+<br/>
+<%= link_to 'List all', :controller => 'survivor_updates', :action => 'index' %> | There are <%= pluralize SurvivorUpdate.non_tweeted.size, 'non-tweeted survivor update', 'non-tweeted survivor updates' %>
+<%- unless SurvivorUpdate.non_tweeted.size.zero? %>
+, <%= link_to 'randomly tweet', :controller => 'survivor_updates', :action => 'randomly_tweet', :number => 5 %> up to 5 survivor updates
+<% end %>

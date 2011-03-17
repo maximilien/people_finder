@@ -1,0 +1,8 @@
+<h3>Manage User profiles (S/V: survivors or victims)</h3>
+<br/>
+<table class='maintable' width='100%'>
+  <%= render :partial => 'admin/profile_table_header' %>
+  <% for user in users %>
+    <%= render :partial => 'admin/profile', :locals => {:user => user} %>
+  <% end %>
+</table>

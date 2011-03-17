@@ -1,0 +1,22 @@
+<fb:title>List of survivors and victims you have added</fb:title>
+
+<br/>
+
+<h3>List of survivors and victims you have added</h3>
+
+<br/>
+
+<fb:profile-pic uid="<%= current_user.facebook_id %>" linked="false" size='square' />
+<br/>
+<fb:name uid="<%= current_user.facebook_id %>" linked="true" useyou='true' />
+
+<br/>
+
+<p>
+<small>
+<b>Thank you</b> for helping save lives and collect and spread information!
+</small>
+</p>
+
+<%= render :partial => 'survivors/survivors_list', 
+           :locals => {:survivors => @survivors, :action => 'index'} %>

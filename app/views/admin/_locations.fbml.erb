@@ -1,0 +1,6 @@
+<table class='maintable' width='100%'>
+  <%= render :partial => 'locations/table_header' %>
+  <% for location in locations %>
+    <%= render :partial => 'locations/location', :locals => {:location => location} %>
+  <% end %>
+</table>

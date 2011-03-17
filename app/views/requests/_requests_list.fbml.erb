@@ -1,0 +1,9 @@
+<div class="requests">
+  <table class="maintable" width="100%" cellspacing="0">
+      <%= render :partial => 'requests/table_header' %>
+      <% requests.each do |request| %>
+      <%= render :partial => 'requests/request', :locals => {:request => request} %>
+    <% end -%>
+</table>
+</div>
+<br/>

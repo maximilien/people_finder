@@ -1,0 +1,24 @@
+<%= error_messages_for :survivor_update %>
+
+<% form_for(survivor_update) do |f| %>
+<p>
+  <b>Status: </b> <%= collection_select :survivor_update, :status, SurvivorUpdate::STATUSES, :to_s, :to_s %>
+  <b>Confirmed </b> <%= f.check_box :confirmed %>,
+  <b>source </b> <%= collection_select :survivor_update, :confirmation_source, SurvivorUpdate::CONFIRMATION_SOURCES, :to_s, :to_s, {:include_blank => true} %>
+</p>
+
+<p>
+  <b>Details</b><br />
+  <%= f.text_area :details, :rows => 7, :cols => 60 %>
+</p>
+
+<p>
+  <b>Allow comments </b> <%= f.check_box :allow_comments %>
+</p>
+
+<% if add_action_button %>
+<p>
+  <%= f.submit "#{submit_action}" %>
+</p>
+<% end %>
+<% end %>

@@ -1,0 +1,9 @@
+<p>
+  <b>Friendship level:</b> <%=h friend.level %>
+</p>
+<p>
+  <b>Description:</b><br/> 
+  <small>
+  <%= (friend.description.nil? or friend.description.blank?) ? '<i>No description</i>' : h(friend.description) %>
+  </small>
+</p>

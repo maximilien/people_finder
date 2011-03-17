@@ -1,0 +1,20 @@
+<%= fb_title "Survivors at location '#{@location.name}'" %>
+
+<div id='location_show' style='padding-top: 5px'>
+  <%= render :partial => 'locations/show', :locals => {:location => @location} %>
+</div>
+<hr/>
+
+<% if current_user.superuser? %>
+  <%= link_to 'Edit', edit_location_path(@location) %> | 
+<% end %>
+<%= link_to 'Back', locations_path %>
+<br/>
+<% unless @survivors.empty? %>
+  <h3>Survivors at location '<%= @location.name %>'</h3>
+  <br/>
+  <%= render :partial => 'survivors/survivors_list', :locals => {:survivors => @survivors} %>
+  <br/><small><div style='text-align: right'><%= pluralize @survivors.size, 'survivor' %></div></small><br/>
+<% else %>
+  <p><small>No survivors at the location '<%= @location.name %>'</small></p>
+<% end %>

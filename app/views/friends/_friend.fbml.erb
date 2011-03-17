@@ -1,0 +1,31 @@
+<tr>
+<td>
+  <%= link_to friend.survivor.profile.formatted_name, 
+              :controller => 'friends', 
+              :action => 'show', :id => friend.id %>
+</td>
+<td><%= friend.survivor.survivor_updates.last.status %></td>
+<td><%=  friend.survivor.survivor_updates.last.updated_at.strftime(fmt='%b %d @ %I:%M %p') %></td>
+<td><%= friend.level %></td>
+<td>
+<%= friend.survivor.survivor_updates.size %> (<%= link_to 'add new update', :controller => 'survivor_updates', :action => 'new', :survivor_id =>  friend.survivor.id %>)
+</td>
+<td>
+<% share_title = "#{friend.survivor.profile.formatted_name}'s #{link_to app_name, haiti_quake_survivors_url} information" %>
+<%
+  share_description = %{#{link_to app_name, haiti_quake_survivors_url} is an online Facebook application that can help you locate friends and family (we call them survivors because we are hopeful they are) who were in Haiti when the earthquake of January 12, 2010 hit the island nation.}
+%>
+<%= _fb_share_button :meta,
+                    :metas => [{:name => 'medium', :content => "blog"},
+                               {:name => 'title', :content => share_title},
+                               {:name => 'description', :content => share_description}],
+                    :links => [{:rel => 'target_url',
+                    :href => "#{haiti_quake_survivors_url}/survivors/show/#{friend.survivor.id}"}] %>
+</td>
+<td>
+    <%= link_to 'Show', :controller => 'friends', 
+                      :action => 'show', :id => friend.id %> |
+    <%= link_to 'Edit', :controller => 'friends', :action => 'edit', :id => friend.id %> |
+    <%= link_to 'Remove', :controller => 'friends', :action => 'remove', :id => friend.id %>
+</td>
+</tr>

@@ -1,0 +1,4 @@
+<% form_tag({:action => "search"}, :id => "search") do %>
+  <%= render :partial => 'locations/search_filter_form' %>
+  <%= text_field 'search', 'query', :class => 'inputtext inputsearch'  %> <%= submit_tag "search" %>
+<% end %>

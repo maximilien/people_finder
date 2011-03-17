@@ -1,0 +1,17 @@
+<% form_for(bulk, :url => {:controller => 'admin', :action => "#{form_action}"}) do |f| %>
+
+<p>
+<b>Data type</b> CSV <%= f.radio_button :csv, 'true' %>
+</p>
+
+<p>
+<b>Data</b> <small>Please cut and paste value for new <%= "#{model_name.pluralize}" %> here</small><br/>  
+<%= f.text_area :data, :rows => 10, :cols => 60 %>
+</p>
+
+<%= f.hidden_field :model_name %>
+<p>
+  <%= f.submit "#{form_submit_tag}" %>
+</p>
+
+<% end %>

@@ -1,0 +1,18 @@
+<%= fb_title "Found a potential of #{@duplicate_profiles.size } of duplicate survivors or victims" %>
+
+<h3><%= "Found a potential of #{@duplicate_profiles.size } of duplicate survivors or victims" %></h3>
+
+<br/>
+
+<%= render :partial => 'survivors/survivors_list',
+           :locals => {:survivors => @duplicate_survivors, :action => 'index'} %>
+
+| <%= link_to 'Skip', :controller => 'survivors', :action => 'index' %>
+
+<hr/>
+
+<%= render :partial => 'survivors/form', :locals => {:survivor => @survivor,
+                                                     :survivor_update => @survivor_update,
+                                                     :profile => @profile,
+                                                     :add_action_button => true,
+                                                     :submit_action => 'Create anyhow'} %>

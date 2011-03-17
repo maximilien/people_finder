@@ -1,0 +1,50 @@
+<tr>
+<td>
+<%= link_to survivor.profile.formatted_name, survivor %>
+<% if survivor.duplicate? %>
+  <span style='color:#FF3030;font-size:10px;'>
+  [flagged as duplicate]
+  </span>
+<% end %>
+</td>
+<td><%= survivor.survivor_updates.empty? ? '<i>No update</i>' : survivor.survivor_updates.last.status %></td>
+<td><%= survivor.location.nil? ? '<i>No location listed</i>' : link_to(survivor.location.name, :controller => 'locations', :action => 'show', :id => survivor.location.id) %></td>
+<td><%= survivor.survivor_updates.size %></td>
+<td align='right'>
+<% share_title = "#{survivor.profile.formatted_name}'s #{link_to app_name, haiti_quake_survivors_url} information" %>
+<%
+  share_description = %{#{link_to app_name, haiti_quake_survivors_url} is an online Facebook application that can help you locate friends and family (we call them survivors because we are hopeful they are) who were in Haiti when the earthquake of January 12, 2010 hit the island nation.}
+%>
+<%= _fb_share_button :meta,
+                    :metas => [{:name => 'medium', :content => "blog"},
+                               {:name => 'title', :content => share_title},
+                               {:name => 'description', :content => share_description}],
+                    :links => [{:rel => 'target_url',
+                    :href => "#{haiti_quake_survivors_url}/survivors/show/#{survivor.id}"}] %>
+</td>
+<td>
+  <%= link_to 'New update', :controller => 'survivor_updates', :action => 'new', :survivor_id => survivor.id %> 
+  <% if !current_user.has_friend?(survivor) and !current_user.has_family_member?(survivor) %>
+  | Add as: <%= link_to 'family', :controller => 'survivors', 
+                                  :action => 'add_as_family_member', 
+                                  :id => survivor.id %> or
+  <%= link_to 'friend', :controller => 'survivors', 
+                        :action => 'add_as_friend', 
+                        :id => survivor.id %>
+  <% elsif !current_user.has_friend?(survivor) and current_user.has_family_member?(survivor) %>
+  | Add as: <%= link_to 'friend', :controller => 'survivors', 
+                                  :action => 'add_as_friend', 
+                                  :id => survivor.id %>
+  <% elsif current_user.has_friend?(survivor) and !current_user.has_family_member?(survivor) %>
+  | Add as: <%= link_to 'family', :controller => 'survivors', 
+                                  :action => 'add_as_family', 
+                                  :id => survivor.id %>
+  <% end %>
+  <% if current_user.superuser? or survivor.user == current_user %>
+  | <%= link_to 'Remove', :controller => 'survivors', :action => 'remove', :id => survivor.id %>
+  <% if current_user.superuser? and !survivor.tweeted? and !(survivor.last_status == SurvivorUpdate::DECEASED_UNCONFIRMED) %>
+  | <%= link_to 'Tweet', :controller => 'survivors', :action => 'tweet', :id => survivor.id %>
+  <% end %>
+  <% end %>
+</td>
+</tr>

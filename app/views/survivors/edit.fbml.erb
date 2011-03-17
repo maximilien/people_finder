@@ -1,0 +1,11 @@
+<%= fb_title "Editing survivor or victim: #{@survivor.formatted_name}" %>
+
+<h3><%= "Editing survivor or victim: #{@survivor.formatted_name}" %></h3>
+
+<%= render :partial => 'survivors/form', :locals => {:survivor => @survivor,
+                                                     :survivor_update => @survivor_update,
+                                                     :profile => @survivor.profile,
+                                                     :add_action_button => true,
+                                                     :submit_action => 'Update'} %>
+<hr/>
+<%= link_to 'Show', @survivor %>

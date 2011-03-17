@@ -1,0 +1,10 @@
+<%= fb_title 'Edit profile' %>
+
+<%= render :partial => 'profiles/form', :locals => {:profile => @profile, 
+                                                    :locations => @locations,
+                                                    :hidden_fields => {},
+                                                    :add_action_button => true,
+                                                    :submit_action => 'Update'} %>
+<hr/>
+
+<%= link_to 'Show', @profile %>

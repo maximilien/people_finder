@@ -1,0 +1,14 @@
+<p>
+  <b>Status: </b> <%= collection_select :survivor_update, :status, SurvivorUpdate::STATUSES, :to_s, :to_s %>
+  <b>Confirmed </b> <%= check_box :survivor_update, :confirmed %>,
+  <b>source </b> <%= collection_select :survivor_update, :confirmation_source, SurvivorUpdate::CONFIRMATION_SOURCES, :to_s, :to_s, {:include_blank => true} %>
+</p>
+
+<p>
+  <b>Details</b><br />
+  <%= text_area :survivor_update, :details, :rows => 7, :cols => 60 %>
+</p>
+
+<p>
+  <b>Allow comments </b> <%= check_box :survivor_update, :allow_comments %>
+</p>

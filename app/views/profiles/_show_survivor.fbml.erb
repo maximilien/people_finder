@@ -1,0 +1,35 @@
+<table border='0' width='75%'>
+<tr>
+<td align='right'>
+<% share_title = "#{profile.formatted_name}'s #{link_to app_name, haiti_quake_survivors_url} information" %>
+<%
+  share_description = %{#{link_to app_name, haiti_quake_survivors_url} is an online Facebook application that can help you locate friends and family (we call them survivors because we are hopeful they are) who were in Haiti when the earthquake of January 12, 2010 hit the island nation.}
+%>
+<%= _fb_share_button :meta,
+                    :metas => [{:name => 'medium', :content => "blog"},
+                               {:name => 'title', :content => share_title},
+                               {:name => 'description', :content => share_description}],
+                    :links => [{:rel => 'target_url',
+                    :href => "#{haiti_quake_survivors_url}/survivors/show/#{survivor.id}"}] %>
+</td>
+</tr>
+</table>
+
+<p>
+  <b>Nickname:</b>
+  <%= (profile.nickname.blank? or profile.nickname.nil?) ? '<small><i>No nickname provided</i></small>' : profile.nickname %>, 
+  <b>email: </b> <%= (profile.email.nil? or profile.email.blank? or  profile.email == 'email@some.hostname.com') ? '<small><i>No email listed</i></small>' : profile.email %><br/>
+  <b>Citizen of:</b> <%= (profile.citizen_of.nil? or profile.citizen_of.blank?) ? '<small><i>Did not specify citizenship</i></small>' : profile.citizen_of %>
+  <br/>
+  <b>Mobile phone: </b>
+  <%= (profile.mobile_phone.blank? or profile.mobile_phone.nil?) ? '<small><i>No mobile phone listed</i></small>' : profile.mobile_phone %>
+  <br/>
+  <b>Home phone: </b>
+  <%= (profile.home_phone.blank? or profile.home_phone.nil?) ? '<small><i>No home phone listed</i></small>' : profile.home_phone %>,
+  <b>work phone: </b>
+  <%= (profile.work_phone.blank? or profile.work_phone.nil?) ? '<small><i>No work phone listed</i></small>' : profile.work_phone %>
+</p>
+
+<p>
+<b>Last known location:</b> <%= link_to survivor.location.name, survivor.location %>
+</p>

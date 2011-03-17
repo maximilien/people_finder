@@ -1,0 +1,11 @@
+<%= fb_title "Showing family member #{@family_member.survivor.profile.formatted_name}" %>
+
+<h3>Showing family member: <%= link_to @family_member.survivor.formatted_name, @family_member.survivor %></h3>
+
+<div id='location_show' style='padding-top: 5px'>
+  <%= render :partial => 'family_members/show', 
+             :locals => {:family_member => @family_member} %>
+</div>
+<hr/>
+
+<%= link_to 'Edit', edit_family_member_path(@family_member) %> | <%= link_to 'Back', family_members_path %>

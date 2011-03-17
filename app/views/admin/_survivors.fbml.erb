@@ -1,0 +1,6 @@
+<table class='maintable' width='100%'>
+  <%= render :partial => 'survivors/table_header', :locals => {:action => 'index'} %>
+  <% for survivor in survivors %>
+    <%= render :partial => 'admin/survivor', :locals => {:survivor => survivor} %>
+  <% end %>
+</table>

@@ -1,0 +1,19 @@
+<%= fb_title "Bulk add #{model_name.downcase.pluralize}" %>
+<div id='bulk_add' style='padding-top: 5px'>
+<h2>Bulk add <%= "#{model_name.downcase.pluralize}" %></h2>
+<small>
+<p>Add <%= "#{model_name.downcase.pluralize}" %> in bulk in CSV (comma separated values)</p>
+<p><b>Examples</b></p>
+
+<p>CSV</p>
+<p>The CSV fields should match schema and order of the XML.  Any data not specified is skipped and set to default or nil</p>
+<code>
+<%= bulk.examples[:csv].gsub(' ', '&nbsp;').gsub('\r\n', '<br/>') %>
+</code>
+
+<%= render :partial => 'admin/bulk_form', 
+           :locals => {:bulk => bulk,
+                       :form_action => 'bulk_add', 
+                       :form_submit_tag => 'Bulk add', 
+                       :model_name => "#{model_name}"} %>
+</div>

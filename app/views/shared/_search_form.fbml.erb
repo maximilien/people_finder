@@ -1,0 +1,3 @@
+<% form_tag({:action => "search"}, :id => "search") do %>
+  <%= text_field 'search', 'query', :class => 'inputtext inputsearch'  %> <%= submit_tag "search" %>
+<% end %>

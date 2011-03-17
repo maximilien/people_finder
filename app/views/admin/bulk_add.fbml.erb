@@ -1,0 +1,21 @@
+<%= fb_title "Bulk add #{@model_name.humanize.downcase.pluralize} results" %>
+<div id='bulk_add_results' style='padding-top: 5px'>
+<h2>Bulk add <%= "#{@model_name.downcase.pluralize}" %> results</h2>
+
+<p>
+Created <b><%= pluralize @created.size, "#{@model_name}" %></b> and modified <b><%= pluralize @modified.size, "#{@model_name}" %></b> on <%= @timestamp.to_s %>
+</p>
+
+<% unless @messages.empty? %>
+  <p><b>Parsing and creation messages</b></p>
+  <ol>
+  <% @messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ol>
+<% end %>
+
+<hr/>
+
+<%= link_to 'Back', :controller => 'admin', :action => 'index' %>
+</div>

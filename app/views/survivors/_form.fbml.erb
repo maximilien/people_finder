@@ -1,0 +1,29 @@
+<%= error_messages_for :survivor %>
+
+<% form_for(survivor) do |f| %>
+    <%= render :partial => 'profiles/form_content', 
+               :locals => {:profile => profile,
+                           :hidden_fields => {:allow_comments => true, 
+                           :share_info_with_all => true, :country => true,
+                           :time_zone => true,
+                           :web_info => true,                                                       
+                           :about_yourself => true}} %>
+  
+  <hr/>
+  
+  <b>Approximate location</b> where survivor (or victim) is: <%= collection_select :survivor, :location_id, @locations, :id, :name %> <small>Can't find location? <%= link_to 'add a new location', :controller => 'locations', :action => 'new' %> first</small>
+
+  <% unless submit_action == 'Update' %>
+  
+  <hr/>
+  
+  <%= render :partial => 'survivor_updates/form_content', 
+             :locals => {:survivor_update => survivor_update} %>
+  <% end %>
+  
+  <% if add_action_button %>
+  <p>
+    <%= f.submit "#{submit_action}" %>
+  </p>
+  <% end %>
+<% end %>

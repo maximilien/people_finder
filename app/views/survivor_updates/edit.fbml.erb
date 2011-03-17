@@ -1,0 +1,25 @@
+<%= fb_title "Editing survivor or victim update for '#{@survivor_update.survivor.profile.formatted_name}'" %>
+
+<h3>Editing survivor or victim update for '<%= link_to @survivor_update.survivor.profile.formatted_name, @survivor_update.survivor %>'</h3?
+
+<%= error_messages_for :survivor_update %>
+
+<table border='0' width='75%'>
+<tr><td>
+<% form_for(@survivor_update) do |f| %>
+  <%= render :partial => 'survivor_updates/form_content', 
+             :locals => {:f => f, :survivor_update => @survivor_update} %>
+  
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+</tr>
+</table>
+
+<hr/>
+
+<%= link_to 'Show', @survivor_update %> | <%= link_to 'Back', survivor_updates_path %>
+<% if @survivor_update.user == current_user or current_user.superuser? %>
+  | <%= link_to 'Remove', :controller => 'survivor_updates', :action => 'remove', :id => @survivor_update.id %>
+<% end %>

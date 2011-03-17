@@ -1,0 +1,9 @@
+<fb:title>Map of all Locations</fb:title>
+
+<div id='location_show' style='padding-top: 5px'>
+  <%= render :partial => 'locations/show_locations', 
+             :locals => {:locations => @locations} %>
+</div>
+<hr/>
+
+<%= link_to 'Back', locations_path %>

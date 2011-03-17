@@ -1,0 +1,4 @@
+<% form_tag({:action => "search"}, :id => "search") do %>
+  <%= render :partial => 'survivor_updates/search_filter_form' %>
+  <b>Survivor or victim name:</b> <%= text_field :search, :query, :size => 30, :class => 'inputtext inputsearch'  %> <%= submit_tag "search" %>
+<% end %>

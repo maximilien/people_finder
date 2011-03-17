@@ -1,0 +1,23 @@
+profile_1:
+  id: 1
+  email: profile_1@bluementor.com
+  phone: 123-456-7890
+  work_location: San Jose
+  work_start_year: 1995
+  share_info_with_all: false
+  share_with_almamater: true
+  graduate: true
+  graduation_date: <%= Time.new.to_s :db %>
+  user_id: 1
+
+profile_2:
+  id: 2
+  email: profile_2@bluementor.com
+  phone: 098-765-4321
+  work_location: San Francisco
+  work_start_year: 2000
+  share_info_with_all: true
+  share_with_almamater: true
+  graduate: false
+  graduation_date: <%= Time.new.to_s :db %>
+  user_id: 2

@@ -1,0 +1,14 @@
+<%= error_messages_for :friend %>
+
+<% form_for(friend) do |f| %>
+  <p>
+  <b>Level: </b><%=  collection_select :friend, :level, Friend::LEVELS, :to_s, :to_s %>
+  </p>
+  <p>
+    <b>Description</b> <small>short description for your level of frienship with this survivor</small><br />
+    <%= f.text_area :description, :rows => 7, :cols => 60 %>
+  </p>
+  <p>
+    <%= f.submit "#{submit_action}" %>
+  </p>
+<% end %>

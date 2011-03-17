@@ -1,0 +1,68 @@
+<fb:fbml version="1.1">
+  <%= stylesheet_link_tag "application"%>
+  
+  <% fb_dashboard do %>
+    <%= fb_action "Invite your friends", new_invitation_path %>
+    <%
+      profile_action = 'My profile'
+    %>
+    <%= fb_action profile_action,  edit_profile_path(:id => current_user.get_or_create_profile.id) if current_user.get_or_create_profile.blank? %>    
+    <%= fb_action profile_action, "/#{canvas_name}/profiles/show/#{current_user.get_or_create_profile.id}" unless current_user.get_or_create_profile.blank? %>
+    <%
+      family_members_count_text = " (#{current_user.family_members.size})"
+      family_members_count_text = '' if current_user.family_members.size.zero?
+    %>
+    <%= fb_action "My family#{family_members_count_text}", "/#{canvas_name}/my/family_members?user_id=#{current_user.id}" %>
+    <%
+      friends_count_text = " (#{current_user.friends.size})"
+      friends_count_text = '' if current_user.friends.size.zero?
+    %>
+    <%= fb_action "My friends#{friends_count_text}", "/#{canvas_name}/my/friends?user_id=#{current_user.id}" %>
+    
+    <%= fb_action "My survivors (#{Survivor.by_user(current_user).count})", "/#{canvas_name}/my/survivors" %>
+    
+    <%= fb_action "My updates (#{SurvivorUpdate.by_user(current_user).count})", "/#{canvas_name}/my/survivor_updates" %>
+    
+    <%= fb_help "Help & Feedback", fb_about_url %>
+    
+    <fb:create-button href='<%= "#{haiti_quake_survivors_url}" %>/survivors/new'>New survivor or victim</fb:create-button>
+  
+  <% end %>
+  
+  <p><small><%= flash[:notice] %></small></p>
+  <% if flash[:error] %>
+    <p style="color: red"><%= flash[:error] %></p>
+  <% end %>
+  
+  <% fb_tabs do %>
+    <% if current_user.superuser? %>
+    <%= fb_tab_item "Admin", "/#{canvas_name}/admin/", :align => 'right',
+                    :selected => !@admin_tab.nil? %>
+    <% end %>
+    
+    <%= fb_tab_item "About", "/#{canvas_name}/welcome/", :align => 'right',
+                    :selected => !@about_tab.nil? %>
+    
+    <%= fb_tab_item "Locations", locations_path,
+                    :selected => !@locations_tab.nil? %>
+    
+    <%= fb_tab_item "All (#{Survivor.count})", survivors_path,
+                    :selected => !@survivors_tab.nil? %>
+    
+    <%= fb_tab_item "Missing (#{Survivor.missing.count})", "/#{canvas_name}/survivors/missing",
+                    :selected => !@missing_tab.nil? %>
+    
+    <%= fb_tab_item "Trapped (#{Survivor.trapped.count})", "/#{canvas_name}/survivors/trapped",
+                               :selected => !@trapped_tab.nil? %>
+    
+    <%= fb_tab_item "OK (#{Survivor.ok_well.count})", "/#{canvas_name}/survivors/ok",
+                    :selected => !@ok_well_tab.nil? %>
+    
+    <%= fb_tab_item "Other (#{Survivor.other.count})", "/#{canvas_name}/survivors/other",
+                    :selected => !@other_tab.nil? %>
+    
+    <%= fb_tab_item "Updates", survivor_updates_path,
+                    :selected => !@survivor_updates_tab.nil? %>
+  <% end %>
+  <%= yield %>
+</fb:fbml>

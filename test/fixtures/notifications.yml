@@ -1,0 +1,13 @@
+notification_1:
+  id: 1
+  name: notification_1
+  last_notified_on: <%= Time.now.to_s :db %>
+  user_id: 1
+
+notification_2:
+  id: 2
+  name: notification_2
+  last_notified_on: <%= Time.now.to_s :db %>
+  user_id: 2
+
+  

@@ -1,0 +1,9 @@
+<%= fb_title 'New survivor or victim' %>
+
+<h3>New survivor or victim</h3>
+
+<%= render :partial => 'survivors/form', :locals => {:survivor => @survivor,
+                                                     :survivor_update => @survivor_update,
+                                                     :profile => @profile,
+                                                     :add_action_button => true,
+                                                     :submit_action => 'Create'} %>

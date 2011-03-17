@@ -1,0 +1,31 @@
+<tr>
+<td>
+  <%= link_to survivor_update.survivor.profile.formatted_name, survivor_update %>
+</td>
+<td>
+  <%= survivor_update.status.nil? ? '<i>Not specified</i>' : survivor_update.status %>
+</td>
+<td><%= survivor_update.updated_at.strftime(fmt='%b %d @ %I:%M %p') %></td>
+<td>
+    <%= _fb_share_button :meta,
+                        :metas => [{:name => 'medium', :content => "blog"},
+                                   {:name => 'title', :content => "#{survivor_update.survivor.profile.formatted_name} survivor, or victim, status update is #{survivor_update.status}"},
+                                   {:name => 'description', :content => "#{h survivor_update.details}"}],
+                             :links => [{:rel => 'target_url', :href => "#{haiti_quake_survivors_url}/survivor_updates/show/#{survivor_update.id}"}] %>
+</td>
+<td>
+  <fb:profile-pic uid="<%= survivor_update.user.facebook_id %>" linked="true" size='square' />
+  <br/>
+  <fb:name uid="<%= survivor_update.user.facebook_id %>" linked="true" useyou='true' />  
+</td>
+<td>
+    <%= link_to 'Add update', :controller => 'survivor_updates', :action => 'new', :survivor_id => survivor_update.survivor.id %> |
+    <%= link_to 'Show update', :controller => 'survivor_updates', :action => 'show', :id => survivor_update.id %>
+    <% if current_user.superuser? or survivor_update.user == current_user %>
+    | <%= link_to 'Remove', :controller => 'survivor_updates', :action => 'remove', :id => survivor_update.id %>
+    <% if current_user.superuser? and !survivor_update.tweeted? and !(survivor_update.status == SurvivorUpdate::DECEASED_UNCONFIRMED) %>
+    | <%= link_to 'Tweet', :controller => 'survivor_updates', :action => 'tweet', :id => survivor_update.id %>
+    <% end %>
+    <% end %>
+</td>
+</tr>

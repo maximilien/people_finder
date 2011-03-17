@@ -1,0 +1,98 @@
+<%= fb_title 'Administration' %>
+
+<h2>Administration</h2>
+
+<br/>
+
+<small>
+If you reach here, it means you are an administrator.  If you reach this by mistake 
+please notify the <a href='mailto:maxim@us.ibm.com?subject=Reached Admin tab by mistake'><%= app_name %> adminstrators</a>.
+</small>
+
+<br/><br/>
+
+<%= render :partial => 'list_stats', :locals => {:stats => @stats} %>
+<br/>
+<div style='text-align: right'>
+<small>
+<%= pluralize @stats.total_entries, 'stat' %></small>
+</div>
+<%= will_paginate @stats %>
+
+<br/>
+
+<%= render :partial => 'list_profiles', :locals => {:users => @users} %>
+<br/>
+<div style='text-align: right'>
+<small><%= pluralize @users.total_entries, 'user' %></small>
+</div>
+<%= will_paginate @users %>
+
+<br/>
+
+<%= render :partial => 'list_locations', :locals => {:locations => @locations} %>
+<br/>
+<div style='text-align: right'>
+<small><%= pluralize @locations.total_entries, 'location' %></small>
+</div>
+<%= will_paginate @locations %>
+
+<br/>
+
+<% unless @duplicate_locations.size.zero? %>
+<%= render :partial => 'list_duplicate_locations', 
+           :locals => {:locations => @duplicate_locations} %>
+<br/>
+<div style='text-align: right'>
+<small>
+<%= pluralize @duplicate_locations.total_entries, 'location' %></small>
+</div>
+<%= will_paginate @duplicate_locations %>
+<% else %>
+  <small>There are no duplicate locations flagged</small>
+<% end %>
+
+<br/>
+
+<%= render :partial => 'list_survivors', :locals => {:survivors => @survivors} %>
+<br/>
+<div style='text-align: right'>
+<small>
+<%= pluralize @survivors.total_entries, 'survivor or victim', 'survivors or victims' %>
+</small>
+</div>
+<%= will_paginate @survivors %>
+
+<br/>
+
+<% unless @duplicate_survivors.size.zero? %>
+<%= render :partial => 'list_duplicate_survivors', 
+           :locals => {:survivors => @duplicate_survivors} %>
+<br/>
+<div style='text-align: right'>
+<small>
+<%= pluralize @duplicate_survivors.total_entries, 'duplicate survivor or victim', 'duplicate survivors or victims' %>
+</small>
+</div>
+<%= will_paginate @duplicate_survivors %>
+<% else %>
+  <small>There are no duplicate survivors or victims flagged</small>
+<% end %>
+
+<br/>
+
+<%= render :partial => 'list_survivor_updates', 
+           :locals => {:survivor_updates => @survivor_updates} %>
+<br/>
+<div style='text-align: right'>
+<small>
+<%= pluralize @survivor_updates.total_entries, 'survivor or victim update', 'survivor or victim updates' %>
+</small>
+</div>
+<%= will_paginate @survivor_updates %>
+
+<br/>
+
+<small>
+<div align='right'>Version <%= version %></div>
+</small>

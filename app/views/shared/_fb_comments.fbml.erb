@@ -1,0 +1,9 @@
+<fb:comments xid='<%= "#{model.class.name.underscore}_#{model.id}" %>' 
+             canpost='<%= canpost.to_s %>' 
+             candelete='<%= candelete.to_s %>'
+             showform='<%= showform.to_s %>'
+             send_notification_uid='<%= send_notification_uid.to_s %>'
+             callbackurl='<%= "http://apps.new.facebook.com/#{canvas_name}/fbml/#{model.class.to_s.underscore}_comments/#{model.id}" %>'
+             returnurl='<%= "http://apps.new.facebook.com/#{canvas_name}/fbml/#{model.class.to_s.underscore}_comments/#{model.id}" %>'>
+  <fb:title>Comment about <%= model_name %></fb:title>
+</fb:comments>

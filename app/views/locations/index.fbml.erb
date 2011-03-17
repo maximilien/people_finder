@@ -1,0 +1,21 @@
+<div style='text-align: right; padding-top: 5px'>
+  <%= render :partial => 'locations/search_form', :locals => {:controller_name => 'locations'} %>
+</div>
+
+<%= fb_title "List of locations" %>
+
+<h3>List of locations</h3>
+
+<p><small>List of locations in Haiti where we are looking for survivors in the aftermath of the January 12th, 2010 earthquake.</small></p>
+
+<p><%= link_to 'New location', new_location_path %> | <%= link_to 'Map of all locations', :controller => 'locations', :action => 'show_all_locations' %></p>
+
+<%= render :partial => 'locations_list', :locals => {:locations => @locations} %>
+
+<br/>
+
+<%= link_to 'New location', new_location_path %> | <%= link_to 'Map of all locations', :controller => 'locations', :action => 'show_all_locations' %>
+
+<br/>
+<small><div style='text-align: right'><%= pluralize @locations.total_entries, 'location' %></div></small>
+<%= will_paginate @locations %>

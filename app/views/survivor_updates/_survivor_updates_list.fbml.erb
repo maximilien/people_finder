@@ -1,0 +1,10 @@
+<div class="survivor_updates">
+  <table class="maintable" width="100%" cellspacing="0">
+      <%= render :partial => 'survivor_updates/table_header' %>
+      <% survivor_updates.each do |survivor_update| %>
+      <%= render :partial => 'survivor_updates/survivor_update', 
+                 :locals => {:survivor_update => survivor_update} %>
+    <% end -%>
+</table>
+</div>
+<br/>

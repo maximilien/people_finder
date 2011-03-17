@@ -1,0 +1,14 @@
+<%= error_messages_for :family_member %>
+
+<% form_for(family_member) do |f| %>
+  <p>
+  <b>Level: </b><%=  collection_select :family_member, :relashionship, FamilyMember::RELASHIONSHIPS, :to_s, :to_s %>
+  </p>
+  <p>
+    <b>Description</b> <small>short description for your relationship with this family member</small><br />
+    <%= f.text_area :description, :rows => 7, :cols => 60 %>
+  </p>
+  <p>
+    <%= f.submit "#{submit_action}" %>
+  </p>
+<% end %>

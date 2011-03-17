@@ -1,0 +1,38 @@
+<%= fb_title "Listing survivors & victims" %>
+
+<br/>
+
+<small>
+First search (e.g., using first and last names), if you find survivor or victim then add an update, otherwise create a new survivor or victim.  Now also on <a href='<%= haiti_quake_survivors_twitter_url %>'>twitter</a>.
+</p>
+
+</small>
+
+<div style='text-align: right; padding-top: 5px'>
+  <%= render :partial => 'survivors/search_form', :locals => {:controller_name => 'survivors'} %>
+</div>
+
+<% unless @survivors.empty? %>
+  <h3>List of survivors & victims <%= link_to image_tag('feed-icon.jpg', :size => "14x14", :border => 0), survivors_and_victims_feedburner_url %></h3>
+  <br/>
+
+  <p>
+  <small>List of individuals (hopefully survivors) in Haiti during the January 12th, 2010 earthquake.</small>
+  </p>
+  <p><%= link_to 'New survivor or victim', :controller => 'survivors', :action => 'new' %></p>
+  <%= render :partial => 'survivors_list', 
+             :locals => {:survivors => @survivors, :action => 'index'} %>
+  <br/><small><div style='text-align: right'><%= pluralize @survivors.total_entries, 'survivor or victim', 'survivors or victims' %> </div></small><br/>  
+  <%= will_paginate @survivors %>
+<% else %>
+
+  <br/>
+  <small>
+  There are no survivors or victims, please add <%= link_to 'new survivor or victim', :controller => 'survivors', :action => 'new' %> (<%= link_to 'missing', :controller => 'survivors', :action => 'new', :status => 'Missing' %>, confirmed
+<%= link_to 'OK', :controller => 'survivors', :action => 'new', :status => 'OK' %> or <%= link_to 'Injured', :controller => 'survivors', :action => 'new', :status => 'Injured' %>)
+  </small>
+<% end %>
+<hr/>
+<div id='ibm-logo' align='right'>
+  <%= link_to image_tag('twitter_logo.png', :border => 0, :size => '75x25'), "#{haiti_quake_survivors_twitter_url}" %>
+</div>

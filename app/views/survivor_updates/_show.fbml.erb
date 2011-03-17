@@ -1,0 +1,53 @@
+<%= fb_title "Update for '#{survivor_update.survivor.profile.formatted_name}'" %>
+
+<h3>Update for '<%= link_to survivor_update.survivor.profile.formatted_name, survivor_update.survivor %>'</h3>
+
+<table border='0' width='100%'>
+<tr>
+<td>
+<p>
+  <%= _fb_share_button :meta,
+                      :metas => [{:name => 'medium', :content => "blog"},
+                                 {:name => 'title', :content => "#{survivor_update.survivor.profile.formatted_name} survivor, or victim, status update is #{survivor_update.status}"},
+                                 {:name => 'description', :content => "#{h survivor_update.details}"}],
+                           :links => [{:rel => 'target_url', :href => "#{haiti_quake_survivors_url}/survivor_updates/show/#{survivor_update.id}"}] %>
+</p>
+<p>
+  <b>Status:</b> <%=h survivor_update.status %>
+</p>
+
+<p>
+  <b>Date:</b> <%=h survivor_update.updated_at.strftime(fmt='%b %d @ %I:%M %p') %>
+</p>
+
+<p>
+  <b>Details:</b><br/>
+  <%=h survivor_update.details %>
+</p>
+
+<p>
+  <b>Confirmed:</b>
+  <%= survivor_update.confirmed? ? 'yes' : 'no' %>,
+  <b>source:</b>
+  <%= survivor_update.confirmation_source.nil? ? '<i>None</i>' : survivor_update.confirmation_source %>,
+  <b>allow comments:</b>
+  <%= survivor_update.allow_comments? ? 'yes' : 'no' %>
+</p>
+
+<% if current_user.superuser? or survivor_update.user == current_user %>
+  <%= link_to 'Edit', edit_survivor_update_path(survivor_update) %> |
+<% end %>
+<%= link_to 'Back', survivor_updates_path %>
+
+<% if survivor_update.allow_comments? %>
+<div id='comments' style='padding-top: 10px'>
+  <% candelete = current_user.superuser? or survivor_update.user == current_user %>
+  <%= render :partial => 'shared/fb_comments', :locals => {:model => survivor_update,
+                                                           :model_name => "#{survivor_update.survivor.formatted_name}'s status of #{survivor_update.status}",
+                                                           :candelete => candelete,
+                                                           :canpost => true,
+                                                           :showform => true,
+                                                           :send_notification_uid => current_user.facebook_id} %>
+</div>
+<% end %>
+</table>

@@ -1,0 +1,12 @@
+<% if model.allow_discussions? %>
+<fb:board xid='<%= "#{model.class.to_s.underscore}_#{model.id}" %>' 
+          canpost='<%= canpost.to_s %>'
+          candelete='<%= candelete.to_s %>' 
+          canmark='<%= canmark.to_s %>' 
+          cancreatetopic='<%= cancreatetopic.to_s %>' 
+          numtopics='<%= numtopics.to_s %>'
+          callbackurl='<%= "http://apps.new.facebook.com/#{canvas_name}/fbml/#{model.class.to_s.underscore}_board/#{model.id}" %>'
+          returnurl='<%= "http://apps.new.facebook.com/#{canvas_name}/fbml/#{model.class.to_s.underscore}_board/#{model.id}" %>'>
+  <fb:title>Message board for <%= model.name %></fb:title>
+</fb:board>
+<% end %>

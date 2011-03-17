@@ -1,0 +1,5 @@
+log/*.log
+tmp/**/*
+tmp/*.*
+pkg/**/*
+vendor/plugins/acts_as_solr/solr/solr/data/development/**/*

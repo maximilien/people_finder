@@ -1,0 +1,15 @@
+user_1:
+  id: 1
+  facebook_id: 12345678
+  session_key: 12345678901234567890
+  created_at: <%= Time.now.to_s :db %>
+  updated_at: <%= Time.now.to_s :db %>
+  superuser: true
+
+user_2:
+  id: 2
+  facebook_id: 23456781
+  session_key: 23456789012345678901
+  created_at: <%= Time.now.to_s :db %>
+  updated_at: <%= Time.now.to_s :db %>
+  superuser: false

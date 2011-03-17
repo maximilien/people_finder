@@ -1,0 +1,17 @@
+<%= fb_title "My family" %>
+
+<h3>
+Listing your family members
+<% unless @family_members.empty? %>
+  <%= link_to image_tag('feed-icon.jpg', :size => "14x14", :border => 0), "#{haiti_quake_survivors_raw_url}/feeds/family_members?user_id=#{current_user.id}" %>
+<% end %>
+</h3>
+<% unless @family_members.empty? %>
+  <br/>
+  <%= render :partial => 'family_members/family_members_list', 
+             :locals => {:family_members => @family_members} %>
+  <%= will_paginate @family_members %>
+<% else %>
+  <br/>
+  <small>You have no family members listed, browse the <%= link_to 'survivors', :controller => 'survivors', :action => 'index' %> list to add them</small>
+<% end %>

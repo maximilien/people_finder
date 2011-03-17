@@ -1,0 +1,9 @@
+<fb:fbml> 
+  <fb:request-form action="<%= new_invitation_path %>" 
+                   method="POST" invite="true"
+                   type="application" 
+                   content="I added the Facebook Haiti Quake People Finder application. <fb:req-choice url='#{haiti_quake_survivors_url}' label='Accept'/>">
+  <fb:multi-friend-selector showborder = "false" 
+    actiontext="Invite your friends to use the Haiti Quake People Finder application on Facebook." /> 
+  </fb:request-form> 
+</fb:fbml>

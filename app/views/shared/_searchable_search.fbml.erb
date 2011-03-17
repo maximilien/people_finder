@@ -1,0 +1,11 @@
+<div id='search-results' style='padding-top: 5px'>
+<h3>Search results for query '<%= query %>'</h3>
+<small> Found <%= searchables.size %> result<%= searchables.size == 1 ? "" : "s" %> for this query</small>
+<br/><br/>
+<% unless searchables.empty? %>
+<div id="list">
+  <%= render :partial => "#{searchable_model_name.underscore.pluralize}/#{searchable_model_name.underscore.pluralize}_list", 
+             :locals => {"#{searchable_model_name.underscore.pluralize}".to_sym => searchables, :action => 'index'} %>
+</div>
+<% end %>
+</div>

@@ -1,0 +1,9 @@
+<div class="profiles">
+  <table class="maintable" width="100%" cellspacing="0">
+      <%= render :partial => 'table_header' %>
+      <% profiles.each do |profile| %>
+      <%= render :partial => 'profiles/profile', :locals => {:profile => profile} %>
+    <% end -%>
+</table>
+</div>
+<br/>

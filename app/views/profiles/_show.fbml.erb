@@ -1,0 +1,73 @@
+<table border='0' width='75%'>
+<tr>
+<td><fb:profile-pic uid="<%= profile.user.facebook_id %>" linked="true" size='square' /></td>
+<td align='right'>
+<% share_title = "#{profile.full_name}'s #{link_to app_name, haiti_quake_survivors_url} user profile" %>
+<% 
+  share_description = %{#{link_to app_name, haiti_quake_survivors_url} is an online Facebook application that can help you locate friends and family (we call them survivors because we are hopeful they are) who were in Haiti when the earthquake of January 12, 2010 hit the island nation.}
+%>
+<%= _fb_share_button :meta, 
+                    :metas => [{:name => 'medium', :content => "blog"},
+                               {:name => 'title', :content => share_title},
+                               {:name => 'description', :content => share_description}],
+                    :links => [{:rel => 'target_url', 
+                    :href => "#{haiti_quake_survivors_url}/profiles/show/#{profile.id}"}] %>
+</td>
+<% if current_user == profile.user %>
+<td align='right'>
+  <fb:add-section-button section="profile" />
+</td>
+<% end %>
+</tr>
+</table>
+<% if current_user.superuser? or current_user == profile.user %>
+<hr/>
+<%= link_to 'Edit', edit_profile_path(profile) %> my <%= app_name %> profile info.
+<hr/>
+<% end %>
+<% if current_user.superuser? and profile.user.superuser? %>
+  <p><i>This user is a <%= app_name %> superuser!</i></p>
+<% end %>
+<p>
+  <fb:name uid="<%= profile.user.facebook_id %>" linked="true" useyou='true' />
+</p>
+<p>
+  Added <b><%= profile.user.added_survivors.size %> survivors or victims</b> since joining <%= app_name %> on <%= profile.created_at.strftime(fmt='%b %d @ %I:%M %p') %>
+  <br/>
+  Added <b><%= profile.user.added_survivor_updates.size %> survivors or victims updates</b> since joining <%= app_name %> on <%= profile.created_at.strftime(fmt='%b %d @ %I:%M %p') %>
+</p>
+<p>
+  <%= profile.allow_comments? ? 'Allows comments from users' : 'Does not allow comments from users' %>
+</p>
+<% if profile.share_info_with_all? %>
+<p>
+  <b>Nickname:</b>
+  <%= (profile.nickname.blank? or profile.nickname.nil?) ? '<small><i>No nickname provided</i></small>' : profile.nickname %>
+  <br/>
+  <b>Citizen of:</b> <%= (profile.citizen_of.nil? or profile.citizen_of.blank?) ? '<small><i>Did not specify citizenship</i></small>' : profile.citizen_of %>
+  <br/>
+  <b>Mobile phone: </b>
+  <%= (profile.mobile_phone.blank? or profile.mobile_phone.nil?) ? '<small><i>No mobile phone listed</i></small>' : profile.phone %>
+  <b>Home phone: </b>
+  <%= (profile.home_phone.blank? or profile.home_phone.nil?) ? '<small><i>No home phone listed</i></small>' : profile.phone %>
+  <b>Work phone: </b>
+  <%= (profile.work_phone.blank? or profile.work_phone.nil?) ? '<small><i>No work phone listed</i></small>' : profile.phone %>
+</p>
+<p>
+  <b>Email: </b> <%= profile.email.nil? or profile.email.blank? or  profile.email == 'email@some.hostname.com' ? '<small><i>No email listed</i></small>' : profile.email %><br/>
+  <b>Twitter: </b> <%= profile.twitter.nil? or profile.twitter.blank? ? '<small><i>No twitter username listed</i></small>' : link_to(h(profile.twitter.strip), "http://twitter.com/#{profile.twitter.strip}") %><br/>
+  <b>Web site: </b> <%= profile.web_site_url.nil? or profile.web_site_url.blank? ? '<small><i>No Web site URL listed</i></small>' : link_to(h(profile.web_site_url.strip), profile.web_site_url.strip) %><br/>
+  <b>Blog: </b> <%= profile.blog_url.nil? or profile.blog_url.blank? ? '<small><i>No blog URL listed</i></small>' : link_to(h(profile.blog_url.strip), profile.blog_url.strip) %><br/>
+</p>
+<p>
+  <b>Time zone:</b> <%= profile.time_zone.nil? ? '<small><i>No time zone listed</i></small>' : profile.time_zone %><br/>
+  <b>Country:</b> <%= profile.country.nil? or profile.country.blank? ? '<small><i>No country listed</i></small>' : profile.country %>
+</p>
+
+<p>
+  <b>General info:</b><br/>
+  <small>
+  <%= profile.about_yourself.gsub(' ', '&nbsp;').gsub("\n", '<br/>').gsub("\r\n", '<br/>') unless profile.about_yourself.nil? %>
+  </small>
+</p>
+<% end %>

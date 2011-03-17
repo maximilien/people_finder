@@ -1,0 +1,8 @@
+<%= fb_title "Adding survivor #{@survivor.profile.formatted_name} to your #{app_name} family list" %>
+
+<%= render :partial => 'survivors/edit_family_member', 
+           :locals => {:family_member => @family_member} %>
+
+<hr/>
+
+<%= render :partial => 'show', :locals => {:survivor => @survivor} %>

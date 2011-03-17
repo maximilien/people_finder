@@ -1,0 +1,11 @@
+<h3><%= "#{status}" %> updates <%= link_to image_tag('feed-icon.jpg', :size => "14x14", :border => 0), feed_url %></h3>
+<br/>
+<% unless survivor_updates.empty? %>
+  <%= render :partial => 'survivor_updates/survivor_updates_list', 
+             :locals => {:survivor_updates => survivor_updates} %>
+<br/><small><div style='text-align: right'><%= pluralize survivor_updates.total_entries, "#{status} updates" %></div></small><br/>
+<%= will_paginate survivor_updates %>
+<% else %>
+  <small>There are no <%= "#{status.humanize.capitalize}" %> updates</small>
+  <br/><br/>
+<% end %>

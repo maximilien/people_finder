@@ -1,0 +1,19 @@
+<%= fb_title "#{@survivor.name}" %>
+
+<%= render :partial => 'survivors/show', :locals => {:survivor => @survivor} %>
+<hr/>
+
+<% if current_user.superuser? %>
+  <%= link_to 'Edit', edit_survivor_path(@survivor) %> | 
+<% end %>
+<%= link_to 'Back', survivors_path %>
+
+<div id='board' style='padding-top: 10px'>
+  <% candelete = current_user.superuser? %>
+  <%= render :partial => 'shared/fb_board', :locals => {:model => @survivor, 
+                                                        :candelete => candelete,
+                                                        :canpost => true,
+                                                        :canmark => false,
+                                                        :cancreatetopic => true,
+                                                        :numtopics => 5} %>
+</div>

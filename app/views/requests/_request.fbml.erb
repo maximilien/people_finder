@@ -1,0 +1,65 @@
+<tr>
+<td>
+  <% if request.kind == Request::TO_MENTEE %>
+    <% if request.mentee.user.id == current_user.id %>
+      <fb:profile-pic uid="<%= request.mentor.user.facebook_id %>" linked="false" size='square' />
+    <% else %>
+      <fb:profile-pic uid="<%= request.mentee.user.facebook_id %>" linked="false" size='square' />
+    <% end %>
+  <% else %>
+    <% if request.mentee.user.id == current_user.id %>
+      <fb:profile-pic uid="<%= request.mentor.user.facebook_id %>" linked="false" size='square' />
+    <% else %>
+      <fb:profile-pic uid="<%= request.mentee.user.facebook_id %>" linked="false" size='square' />
+    <% end %>
+  <% end %>
+</td>
+<td>
+  <% if request.kind == Request::TO_MENTEE %>
+    <% if request.mentee.user.id == current_user.id %>
+      <%= link_to "#{app_name} profile", :controller => 'survivors', :action => 'show', :id => request.mentor.id %>
+      <br/>
+      Fb profile: <fb:name uid="<%= request.mentor.user.facebook_id %>" useyou='true'/>
+    <% else %>
+      <%= link_to "#{app_name} profile", :controller => 'mentees', :action => 'show', :id => request.mentee.id %>
+    <br/>
+    Fb profile: <fb:name uid="<%= request.mentee.user.facebook_id %>" useyou='true'/>
+    <% end %>
+  <% else %>
+    <% if request.mentee.user.id == current_user.id %>
+      <%= link_to "#{app_name} profile", :controller => 'survivors', :action => 'show', :id => request.mentor.id %>
+      <br/>
+      Fb profile: <fb:name uid="<%= request.mentor.user.facebook_id %>" useyou='true'/>
+    <% else %>
+      <%= link_to "#{app_name} profile", :controller => 'mentees', :action => 'show', :id => request.mentee.id %>
+      <br/>
+      Fb profile: <fb:name uid="<%= request.mentee.user.facebook_id %>" useyou='true'/>
+    <% end %>
+  <% end %>
+</td>
+<td><%= request.created_at.strftime(fmt='%b %d @ %I:%M %p') %></td>
+<td><%= request.status %></td>
+<td>
+  <small>
+  <% if request.kind == Request::TO_MENTEE %>
+    <% if request.mentee.user.id != current_user.id %>
+      <%= link_to "accept", :controller => 'requests', :action => 'accept_mentor_request', :id => request.id %> |
+      <%= link_to "decline", :controller => 'requests', :action => 'decline_mentor_request', :id => request.id %> |
+      <%= link_to "remove", :controller => 'requests', :action => 'remove_mentor_request', :id => request.id %>
+      <% else %>
+        <%= link_to "remove", :controller => 'requests', :action => 'remove_mentor_request', :id => request.id %> |
+        <%= link_to "remind", :controller => 'requests', :action => 'remind_mentor_request', :id => request.id %>
+      <% end %>
+  <% else %>
+    <% if request.mentor.user.id != current_user.id %>  
+      <%= link_to "accept", :controller => 'requests', :action => 'accept_mentee_request', :id => request.id %> |
+      <%= link_to "decline", :controller => 'requests', :action => 'decline_mentee_request', :id => request.id %> |
+      <%= link_to "remove", :controller => 'requests', :action => 'remove_mentee_request', :id => request.id %>
+    <% else %>
+      <%= link_to "remove", :controller => 'requests', :action => 'remove_mentee_request', :id => request.id %> |
+        <%= link_to "remind", :controller => 'requests', :action => 'remind_mentee_request', :id => request.id %>
+    <% end %>
+  <% end %>
+  </small>
+</td>
+</tr>

@@ -1,0 +1,2 @@
+<b>Status: </b><%= collection_select :search, :status, Survivor::STATUSES, :to_s, :to_s, {:include_blank => true} %>
+<b>Location: </b><%= collection_select :search, :location, Location.all, :id, :name, {:include_blank => true}, {:style => 'width: 7em'} %>

@@ -1,0 +1,42 @@
+<tr>
+<td>
+  <% unless location.picture_url.nil? or location.picture_url.blank? %>
+    <%= image_tag location.picture_url.strip, 
+                  :border => 0, :size => '30x30', 
+                  :padding_top => '10px',
+                  :alt => "#{location.name}" %>
+  <% else %>
+    <i>No photo</i>
+  <% end %>
+</td>
+<td>
+  <%= link_to location.name, :controller => 'locations', :action => 'show', :id => location.id %>
+  <% unless location.web_site_url.nil? or location.web_site_url.blank? %>
+    (<%= link_to 'www', location.web_site_url.strip %>)
+  <% end %>
+  <% if location.duplicate? %>
+    <span style='color:#FF3030;font-size:10px;'>
+    [flagged as duplicate]
+    </span>
+  <% end %>
+</td>
+<td><%= location.kind %></td>
+<td>
+  <%= "#{location.city}" unless location.city.nil? or location.city.blank? %>
+</td>
+<td><%= location.country %></td>
+<td><%= location.survivors.size %> </td>
+<td>
+    <%= _fb_share_button :meta,
+                        :metas => [{:name => 'medium', :content => "blog"},
+                                   {:name => 'title', :content => "#{location.name} in #{app_name} has #{location.survivors.size} survivors or victims"},
+                                   {:name => 'description', :content => "Location #{h location.more_details.gsub("<br/>", " ").gsub("<b>", " ").gsub("</b>", " ")}" + "#{(location.description.nil? or location.description.blank?) ? "" : "\n#{location.description}"}"}],
+                        :links => [{:rel => 'target_url', :href => "#{haiti_quake_survivors_url}/locations/show/#{location.id}"}] %>
+</td>
+</td>
+<td>
+  <%= link_to 'Show', :controller => 'locations', :action => 'show', :id => location.id %> |
+    <%= link_to 'Edit', :controller => 'locations', :action => 'edit', :id => location.id %> |
+    <%= link_to 'Remove', :controller => 'locations', :action => 'remove', :id => location.id %>
+</td>
+</tr>

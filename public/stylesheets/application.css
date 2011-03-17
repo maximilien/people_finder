@@ -1,0 +1,468 @@
+body {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  background-color: #f0f0f0;
+  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  font-size: 13px;
+  color: #333;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+a  {
+  color: #03c;
+  text-decoration: none;
+}
+
+a img { 
+  border: 0px solid #0f0; 
+}
+
+a:hover {
+  color: white;
+  background-color: #03c;
+  text-decoration: none;
+}
+
+
+#page {
+  background-color: #f0f0f0;
+  width: 880px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content {
+  float: left;
+  background-color: white;
+  border: 3px solid #aaa;
+  border-top: none;
+  padding: 5px;
+  width: 620px;
+}
+
+#sidebar {
+  float: right;
+  width: 130px;
+}
+
+#leftsidebar {
+  float: left;
+  width: 100px;
+}
+
+#footer {
+  font-size: 11px;
+  clear: both;
+  width: 720px;
+  margin-left: 100px;
+  float: left;
+}
+
+
+#header, #about, #main {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+#header {
+  height: 47px;
+}
+
+#header h1, #header h2 {margin: 0}
+#header h2 {
+  color: #888;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+#about h3 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#about-content {
+  background-color: #ffd;
+  border: 1px solid #fc0;
+  margin-left: -11px;
+}
+#about-content table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  border-collapse: collapse;
+}
+#about-content td {
+  padding: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+#about-content td.name  {color: #555}
+#about-content td.value {color: #000}
+
+#about-content.failure {
+  background-color: #fcc;
+  border: 1px solid #f00;
+}
+#about-content.failure p {
+  margin: 0;
+  padding: 10px;
+}
+
+#main {
+  border-top: 1px solid #ccc;
+  margin-top: 25px;
+  padding-top: 15px;
+}
+
+#main h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+#main h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+#main ol {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#main li {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+#main li h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  color: #333;
+}
+
+#main li p {
+  color: #444;
+  font-size: 13px;
+}
+
+
+/* MAIN TABLE */
+/* Many thanks to Mininova.org for the Table design */
+
+.maintable 
+{
+  font-size: inherit;
+  line-height: 1.6em;
+  border-bottom: 1px solid #aaa;
+  border-collapse: collapse;
+}
+
+.maintable th, .maintable td { padding: 0 .3em; }
+
+.maintable th 
+{
+  color: #222;
+  line-height: 1.8em;
+  background-color: #d0d0d0;
+  border: 1px solid #222;
+  margin-top: 0.1em;
+}
+
+.maintable tr.d { background-color: #d0d0d0; }
+
+.maintable tr:hover, .maintable tr.hovered 
+{
+  background-color: #d0d0d0;
+}
+
+.maintable .n { font-weight: bold; }
+
+.maintable td 
+{
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+}
+
+.maintable td a:hover 
+{
+  background-color: #03c;
+  color: white;
+  text-decoration: none;
+}
+
+.maintable img 
+{
+  margin-top: .45em;
+}
+
+.maintable .dl 
+{
+  float: left;
+  margin-right: .3em;
+}
+
+.maintable .ti 
+{
+  float: right;
+  margin-left: .3em;
+}
+
+.maintable .ti.com 
+{
+  margin-left: .6em;
+}
+
+.maintable small 
+{
+  font-size: 80%;
+  vertical-align: middle;
+}
+
+.maintable tr:hover small, .maintable tr.hovered small 
+{
+  visibility: visible;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #FF0000;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 13px;
+  list-style: square;
+}
+
+
+.pagination
+{
+  padding: 2px;
+  text-align: right;
+}
+
+.pagination ul
+{
+  margin: 0;
+  padding: 0;
+  text-align: left; /*Set to "right" to right align pagination interface*/
+  font-size: 16px;
+}
+
+.pagination li{
+  list-style-type: none;
+  display: inline;
+  padding-bottom: 1px;
+}
+
+.pagination a, .pagination a:visited{
+  padding: 0 5px;
+  border: 1px solid #9aafe5;
+  text-decoration: none;
+  color: #2e6ab1;
+}
+
+.pagination a:hover, .pagination a:active{
+  border: 1px solid #2b66a5;
+  color: #000;
+  background-color: yellow;
+}
+
+.pagination li.currentpage{
+  font-weight: bold;
+  padding: 0 5px;
+  border: 1px solid navy;
+  background-color: #2e6ab1;
+  color: #FFF;
+}
+
+.pagination li.disablepage{
+  padding: 0 5px;
+  border: 1px solid #929292;
+  color: #929292;
+}
+
+.pagination li.nextpage{
+  font-weight: bold;
+}
+
+* html .pagination li.currentpage, * html .pagination li.disablepage{ 
+  /*IE 6 and below. Adjust non linked LIs slightly to account for bugs*/
+  margin-right: 5px;
+  padding-right: 0;
+}
+
+#search {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 11px;
+}
+
+#search input {
+  font-size: 11px;
+  margin: 2px;
+}
+
+#search-text {width: 170px}
+
+#sidebar a {
+  color: #000;
+  text-decoration: none;
+}
+
+#sidebar a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+
+#sidebar ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+#sidebar ul h3 {
+  margin-top: 25px;
+  font-size: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+#sidebar li {
+  list-style-type: none;
+}
+#sidebar ul.links li {
+  margin-bottom: 5px;
+}
+
+#leftsidebar a {
+  color: #000;
+  text-decoration: none;
+}
+
+#leftsidebar a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+
+#leftsidebar ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+#leftsidebar ul h3 {
+  margin-top: 25px;
+  font-size: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+#leftsidebar li {
+  list-style-type: none;
+}
+#leftsidebar ul.links li {
+  margin-bottom: 5px;
+}
+
+
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times New Roman; min-height: 15.0px}
+p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times New Roman}
+p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 36.0px; font: 12.0px Times New Roman}
+span.s1 {text-decoration: underline ; color: #0000ff}
+span.s2 {font: 12.0px LastResort}
+span.s3 {font: 12.0px Symbol}
+span.s4 {color: #0000ff}
+span.Apple-tab-span {white-space:pre}
+
+
+.feed {
+  margin-left: 3px;
+  padding: 0 0 0 19px;
+  background: url("/images/feed-icon-14x14.png") no-repeat 0 50%;
+}
+
+/* OpenID field */
+input#openid_url,input#identity_url,input#user_identity_url {
+  background: white url(/images/openid.gif) no-repeat scroll 0pt 50%;   
+  padding-left: 18px;
+}
+
+
+.report tr.odd {
+  background-color: #F8F8F8;
+}
+
+.report td.total {
+  background-color: #686868;
+  color: #FFF ;
+  font-weight: bold;
+}
+
+.report th {
+  background-color: #686868;
+  color: #FFF ;
+  text-align: left;
+}
+
+div.floatLeft {
+  float: left;
+}
+div.floatRight {
+  float: right;
+}
+
+div.floatTop {
+  float: top;
+}
+
+br.clear {
+  clear: both;
+  height: 0;
+  line-height: 0px;
+}
+
+.fixedFont {
+  font-family: "Andale Mono", "monospace";
+}
+
+.tinyFont {
+  font-size: 9px;
+}
+
+/* Search styles */
+.inputsearch 
+{
+  background: white url(http://174.129.134.98:5000/images/magglass.png) no-repeat scroll 3px 4px;
+  padding-left: 17px;
+}

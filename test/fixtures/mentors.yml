@@ -1,0 +1,13 @@
+mentor_1:
+  id: 1
+  start: <%= Time.new.to_s :db %>
+  end: <%= Time.new.to_s :db %>
+  accepts_new_mentees: true
+  user_id: 1
+
+mentor_2:
+  id: 2
+  start: <%= Time.new.to_s :db %>
+  end: <%= Time.new.to_s :db %>
+  accepts_new_mentees: false
+  user_id: 2

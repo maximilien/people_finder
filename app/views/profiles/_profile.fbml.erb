@@ -1,0 +1,16 @@
+<tr>
+<td>
+  <fb:profile-pic uid="<%= user.facebook_id %>" linked="false" size='square' />
+  <br/>
+  <fb:name uid="<%= user.facebook_id %>" linked="true" useyou='true' />
+</td>
+<td><%= link_to "#{app_name} profile", :controller => 'profiles', :action => 'show', :id => user.profile.id %></td>
+<td><%= user.superuser? ? 'Yes' : 'No' %></td>
+<td>
+<%= link_to 'Show', :controller => 'profiles', :action => 'show', :id => user.get_or_create_profile.id %> |
+<%= link_to 'Edit', :controller => 'profiles', :action => 'edit', :id => user.get_or_create_profile.id %>
+<% if current_user.superuser? %>
+   | <%= link_to 'Remove', :controller => 'profiles', :action => 'remove', :id => user.get_or_create_profile.id %>
+<% end %>
+</td>
+</tr>

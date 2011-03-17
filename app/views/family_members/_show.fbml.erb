@@ -1,0 +1,9 @@
+<p>
+  <b>Relashionship:</b> <%=h family_member.relashionship %>
+</p>
+<p>
+  <b>Description:</b><br/> 
+  <small>
+  <%= (family_member.description.nil? or family_member.description.blank?) ? '<i>No description</i>' : h(family_member.description) %>
+  </small>
+</p>

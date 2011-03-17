@@ -1,0 +1,8 @@
+<%= fb_title "#{app_name} - Statistics for #{@stat.updated_at.strftime(fmt='%b %d')}" %>
+
+<div id='stat_show' style='padding-top: 5px'>
+  <%= render :partial => 'stats/show', :locals => {:stat => @stat} %>
+</div>
+<hr/>
+
+<%= link_to 'Back', stats_path %>

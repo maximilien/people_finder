@@ -1,0 +1,15 @@
+Pfif
+====
+
+pfif is a Ruby plugin to generate PFIF from XML and DB and vice versa.  See PFIF standard: http://zesty.ca/pfif/1.1/
+
+
+Example
+=======
+
+TODO: Example goes here.
+
+
+(C) E. M. Maximilien from IBM Research - Almaden
+http://maximilien.org
+maxim@us.ibm.com

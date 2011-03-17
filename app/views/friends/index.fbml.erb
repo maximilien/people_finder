@@ -1,0 +1,13 @@
+<%= fb_title "List of friends" %>
+
+<h3>
+List of friends
+<% unless @friends.empty? %>
+  <%= link_to image_tag('feed-icon.jpg', :size => "14x14", :border => 0), "#{haiti_quake_survivors_raw_url}/feeds/friends?user_id=#{current_user.id}" %>
+<% end %>
+</h3>
+
+<br/>
+<%= render :partial => 'friends_list', :locals => {:friends => @friends} %>
+<br/><small><div style='text-align: right'><%= pluralize @friends.total_entries, 'friend' %></div></small></br>
+<%= will_paginate @friends %>

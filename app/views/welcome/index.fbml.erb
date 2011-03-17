@@ -1,0 +1,70 @@
+<%= fb_title 'About' %>
+
+<div id='ibm-logo' align='left'>
+  <br/>
+  <%= link_to image_tag('haiti_quake_survivors2.jpg', :border => 0, :size => '50x75'), '#{haiti_quake_survivors_url}' %>
+</div>
+
+<h2>About <%= app_name %></h2>
+<p><%= site_blurb %></p>
+
+<table border='0'>
+<tr>
+<td>
+<div id='twitter' align='left'>
+  Follow us on <a href='<%= haiti_quake_survivors_twitter_url %>'>twitter</a> to get live updates of existing survivors and victims as well as newly added entries in order to help send relief faster.
+  <p>
+  <%= link_to image_tag('twitter_logo.png', :border => 0, :size => '160x43'), "#{haiti_quake_survivors_twitter_url}" %>
+  </p>
+</div>
+</td>
+<td>
+<div align='google-maps' align='left'>
+  Now you can get a <a href='http://maps.google.com'>Google Map</a> view of each <%= link_to 'location', :controller => 'locations', :action => 'index' %> with a marker with details survivors and victims information.  We also have a map with <%= link_to 'all locations', :controller => 'locations', :action => 'show_all_locations' %> and associated markers.
+  <p>
+  <%= link_to image_tag('google_maps_logo.png', :border => 0, :size => '173x41'), :controller => 'locations', :action => 'show_all_locations' %>
+  </p>
+</div>
+</td>
+</table>
+
+<p>
+<%= feedback_help_blurb %>
+Here is our list of <%= link_to "Frequently Asked Questions", :controller => 'welcome', :action => 'faq' %> and the <%= link_to 'latest news', :controller => 'welcome', :action => 'news' %>.
+<%= link_to "Contact Information", :controller => 'welcome',
+                                      :action => 'contact' %>.
+Please note that by using <%= app_name %> you are agreeing to its <%= link_to 'terms of use', :controller => 'welcome', :action => 'tou' %> and its <%= link_to 'privacy policy', :controller => 'welcome', :action => 'privacy_policy' %>.
+</p>
+
+<small>
+<div align='right'>
+  <%= link_to image_tag('ibm_arc_logo.jpg', :border => 0, :size => '100x42'), 'http://www.almaden.ibm.com' %>
+  <br/>
+  Version <%= version %>
+</div>
+</small>
+
+<small>
+<div align='center'>
+Copyright 2010 &copy;  <a href='http://maximilien.org' alt='Maximilien'>E.M. Maximilien</a>
+</div>
+</small>
+
+<hr/>
+
+<div id='google-person-finder' align='center'>
+<p>
+Now all data in <%= link_to "#{app_name}", :controller => 'welcome', :action => 'index' %> are periodically sync with <a href='http://haiticrisis.appspot.com/'>Google Person Finder</a> which maintains a centralized DB of all similar applications involved in the Haiti Relief effort, e.g., <a href='http://www.ireport.com/ir-topic-stories.jspa?topicId=381628'>CNN's iReport</a>.
+</p>
+<div id='google-person-finder-iframe' align='center'>
+<iframe
+      src="http://haiticrisis.appspot.com/?small=yes"
+      width=375 height=230 frameborder=0
+      style="border: dashed 2px #77c">
+</iframe>
+</div>
+</div>
+
+<hr/>
+
+<fb:feed max='<%= "#{max_news_feed_items}" %>'/>

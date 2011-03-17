@@ -1,0 +1,28 @@
+<%= fb_title "Listing of entries with #{status} status" %>
+
+<p>
+<small>
+First look and page down, if you find the survivor or victim you are looking for then consider adding an update, otherwise create a new entry. Now also on <a href='<%= haiti_quake_survivors_twitter_url %>'>twitter</a>.
+</small>
+</p>
+
+<% unless survivors.empty? %>
+  <h3>List of entries with <%= status %> status <small>(<%= link_to 'most recent', :controller => 'survivors', :action => "#{status.downcase}", :order => 'updated_at ASC' %> or <%= link_to 'least recent', :controller => 'survivors', :action => "#{status.downcase}", :order => 'updated_at DESC' %>)</small></h3>
+  <br/>
+  
+  <p>
+  <p><%= link_to 'New survivor or victim', :controller => 'survivors', :action => 'new' %></p>
+  <%= render :partial => 'survivors_list', 
+             :locals => {:survivors => survivors, :action => status.underscore} %>
+  <br/><small><div style='text-align: right'><%= pluralize survivors.size, 'survivor or victim', 'survivors or victims' %> </div></small><br/>  
+<% else %>
+  <br/>
+  <small>
+  There are no survivors or victims with status <%= status %>, please add <%= link_to 'new survivor or victim', :controller => 'survivors', :action => 'new' %> (<%= link_to 'missing', :controller => 'survivors', :action => 'new', :status => 'Missing' %>, confirmed
+<%= link_to 'OK', :controller => 'survivors', :action => 'new', :status => 'OK' %> or <%= link_to 'Injured', :controller => 'survivors', :action => 'new', :status => 'Injured' %>)
+  </small>
+<% end %>
+<hr/>
+<div id='ibm-logo' align='right'>
+  <%= link_to image_tag('twitter_logo.png', :border => 0, :size => '75x25'), "#{haiti_quake_survivors_twitter_url}" %>
+</div>

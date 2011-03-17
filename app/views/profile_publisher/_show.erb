@@ -1,0 +1,26 @@
+<table border='0' width='75%'>
+</table>
+<p>
+  <%= profile.allow_comments? ? 'I allow comments from users' : 'I currently do not allow comments from users' %>
+</p>
+<p>
+  <b>Nickname:</b>
+  <%= (profile.nickname.blank? or profile.nickname.nil?) ? '<small><i>No nick name selected</i></small>' : profile.nickname %>
+  <br/>
+</p>
+<p>
+  <b>Web site: </b> <%= profile.web_site_url.nil? or profile.web_site_url.blank? ? '<small><i>No Web site URL listed</i></small>' : link_to(h(profile.web_site_url.strip), profile.web_site_url.strip) %><br/>
+  <b>Blog: </b> <%= profile.blog_url.nil? or profile.blog_url.blank? ? '<small><i>No blog URL listed</i></small>' : link_to(h(profile.blog_url.strip), profile.blog_url.strip) %><br/>
+</p>
+<p>
+  <b>Time zone:</b> <%= profile.time_zone.nil? ? '<small><i>No time zone listed</i></small>' : profile.time_zone %></br>
+  <b>Location:</b> <%= profile.location.nil? ? '<small><i>No location listed</i></small>' : profile.location.name %> <%= " (#{profile.location.acronym})" unless profile.location.nil? or profile.location.acronym.nil? %><%= (profile.location.nil? or profile.location.state.nil?) ? ', <small><i>No location state</i></small>' : ', ' + profile.location.state %></br>
+  <b>Country:</b> <%= profile.country.nil? or profile.country.blank? ? '<small><i>No country listed</i></small>' : profile.country %>
+</p>
+
+<p>
+  <b>General info:</b><br/>
+  <small>
+  <%= profile.about_yourself.gsub(' ', '&nbsp;').gsub("\n", '<br/>').gsub("\r\n", '<br/>') unless profile.about_yourself.nil? %>
+  </small>
+</p>

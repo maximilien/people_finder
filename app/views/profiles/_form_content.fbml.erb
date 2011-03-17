@@ -1,0 +1,80 @@
+<% unless hidden_fields[:allow_comments] %>
+  <p>
+  <b>Allow comments? </b>
+  <%= check_box :profile, :allow_comments %> <small>i.e., let users comment on my profile, you can delete them</small>
+  </p>
+<% end %>
+
+<% unless hidden_fields[:share_info_with_all] %>
+  <p>
+    <span>Share info with all <%= app_name %> users </span><%= check_box :profile, :share_info_with_all %><br/>
+  </p>
+<% end %>
+
+  <p>
+    <%= collection_select :profile, :salutation, Profile::SALUTATIONS, :to_s, :to_s, {:include_blank => true}, :default => profile.salutation %>
+    <b>First: </b>
+    <%= text_field :profile, :first_name, :size => 20, :value => profile.first_name %>
+    <b>Middle: </b>
+    <%= text_field :profile, :middle_name, :size => 15, :value => profile.middle_name %>
+    <b>Last: </b>
+    <%= text_field :profile, :last_name, :size => 27, :value => profile.last_name %>
+    <%= collection_select :profile, :suffix, Profile::SUFFIXES, :to_s, :to_s, {:include_blank => true}, :default => profile.suffix %>
+  </p>
+
+  <p>
+  <b>Nickname: </b>
+  <%= text_field :profile, :nickname, :size => 35, :value => profile.nickname %><small>(optional)</small>
+  <b>Citizen of: </b>
+    <%= country_select :profile, :citizen_of, ['Haiti', 'United States', 'Canada', 'France'], {:include_blank => true} %>
+  </p>
+
+<% unless hidden_fields[:time_zone] %>
+  <p>
+    <b>Time zone: </b><%= time_zone_select :profile, :time_zone, ActiveSupport::TimeZone.us_zones %>
+  </p>
+<% end %>
+
+<% unless hidden_fields[:country] %>
+  <p>
+    <b>Country</b>
+    <%= country_select :profile, :country, ['Haiti', 'United States', 'Canada', 'France'], {:include_blank => true} %><br/>
+  </p>
+<% end %>
+
+<p>
+<b>Photo URL: </b>
+<%= text_field :profile, :photo_url, :size => 90, :value => profile.photo_url %>
+</p>
+
+  <p>
+    <hr/>
+    <b>Email: </b>
+    <%= text_field :profile, :email, :size => 30, :value => profile.email %><small>(optional)</small><br/>
+    <b>Mobile phone: </b>
+    <%= text_field :profile, :mobile_phone, :size => 25, :value => profile.mobile_phone %> <small>e.g., (123)456-7890 (optional)</small><br/>
+    <b>Home phone: </b>
+    <%= text_field :profile, :home_phone, :size => 25, :value => profile.home_phone %> <small>(optional)</small>
+    <b>Work phone: </b>
+    <%= text_field :profile, :work_phone, :size => 22, :value => profile.work_phone %><small>(optional)</small>
+  </p>
+
+<% unless hidden_fields[:web_info] %>
+  <hr/>
+  <p>
+  <b>Twitter: </b>
+  <%= text_field :profile, :twitter, :size => 33, :value => profile.twitter %><small>(optional)</small><br/>
+  <b>Web page: </b>
+  <%= text_field :profile, :web_site_url, :size => 40, :value => profile.web_site_url %><small>(optional)</small><br/>
+  <b>Blog: </b>
+  <%= text_field :profile, :blog_url, :size => 44, :value => profile.blog_url %><small>(optional)</small><br/>
+  </p>
+  <% end %>
+
+<% unless hidden_fields[:about_yourself] %>
+  <hr/>
+  <p>
+    <b>About yourself</b> <small>e.g., what you can offer?, what you are looking for?, and so on (optional)</small><br />
+    <%= text_area :profile, :about_yourself, :rows => 7, :cols => 60, :value => profile.about_yourself %>
+  </p>
+<% end %>

@@ -1,0 +1,44 @@
+<div style='text-align: right; padding-top: 5px'>
+  <%= render :partial => 'survivor_updates/search_form', :locals => {:controller_name => 'survivor_updates'} %>
+</div>
+
+<%= fb_title "Listing survivor and victims updates" %>
+
+<p>
+<small>List of updates about survivors and victims. Now also on <a href='<%= haiti_quake_survivors_twitter_url %>'>twitter</a>.
+</small>
+</p>
+
+Create <%= link_to 'new survivor or victim', :controller => 'survivors', :action => 'new' %> | <%= link_to 'Missing', :controller => 'survivors', :action => 'new', :status => 'Missing' %> | Confirmed
+<%= link_to 'OK', :controller => 'survivors', :action => 'new', :status => 'OK' %> or <%= link_to 'Injured', :controller => 'survivors', :action => 'new', :status => 'Injured' %> or <%= link_to 'Other', :controller => 'survivors', :action => 'new', :status => 'Other' %>
+
+<hr/>
+
+<%= render :partial => 'survivor_updates/survivor_updates', 
+           :locals => {:survivor_updates => @missing_survivor_updates, 
+                       :status => 'Missing',
+                       :feed_url => survivor_updates_missing_feedburner_url} %>
+
+<%= render :partial => 'survivor_updates/survivor_updates',
+           :locals => {:survivor_updates => @ok_survivor_updates, 
+                       :status => 'OK',
+                       :feed_url => survivor_updates_ok_feedburner_url} %>
+
+<%= render :partial => 'survivor_updates/survivor_updates',
+           :locals => {:survivor_updates => @injured_survivor_updates, 
+                       :status => 'Injured',
+                       :feed_url => survivor_updates_injured_feedburner_url} %>
+
+<%= render :partial => 'survivor_updates/survivor_updates', 
+                      :locals => {:survivor_updates => @other_survivor_updates, 
+                                  :status => 'Other',
+                                  :feed_url => survivor_updates_other_feedburner_url} %>
+
+<hr/>
+
+<div id='ibm-logo' align='right'>
+  <%= link_to image_tag('twitter_logo.png', :border => 0, :size => '75x25'), "#{haiti_quake_survivors_twitter_url}" %>
+</div>
+
+Create <%= link_to 'new survivor or victim', :controller => 'survivors', :action => 'new' %> | <%= link_to 'Missing', :controller => 'survivors', :action => 'new', :status => 'Missing' %> | Confirmed
+<%= link_to 'OK', :controller => 'survivors', :action => 'new', :status => 'OK' %> or <%= link_to 'Injured', :controller => 'survivors', :action => 'new', :status => 'Injured' %> or <%= link_to 'Other', :controller => 'survivors', :action => 'new', :status => 'Other' %>

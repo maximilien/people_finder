@@ -1,0 +1,11 @@
+<%= fb_title "Showing friend #{@friend.survivor.profile.formatted_name}" %>
+
+<h3>Showing friend: <%= link_to @friend.survivor.formatted_name, @friend.survivor %></h3>
+
+<div id='location_show' style='padding-top: 5px'>
+  <%= render :partial => 'friends/show', 
+             :locals => {:friend => @friend} %>
+</div>
+<hr/>
+
+<%= link_to 'Edit', edit_friend_path(@friend) %> | <%= link_to 'Back', friends_path %>

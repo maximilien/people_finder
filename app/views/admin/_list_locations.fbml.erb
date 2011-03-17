@@ -1,0 +1,6 @@
+<br/>
+<h3>Manage locations</h3>
+<br/>
+<%= render :partial => 'admin/locations', :locals => {:locations => locations} %>
+<br/>
+<%= link_to 'Add location', :controller => 'locations', :action => 'new' %> | <%= link_to 'Bulk add locations', :controller => 'admin', :action => 'bulk_add_locations' %> | <%= link_to 'List all', :controller => 'locations', :action => 'index' %>

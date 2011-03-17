@@ -1,0 +1,12 @@
+<%= fb_title "#{@location.name}" %>
+
+<div id='location_show' style='padding-top: 5px'>
+  <%= render :partial => 'locations/show', :locals => {:location => @location} %>
+</div>
+<hr/>
+
+<%= link_to 'Edit', edit_location_path(@location) %> 
+<% unless @location.duplicate? %>
+  | <%= link_to 'Flag as duplicate', :controller => 'locations', :action => 'duplicate', :id => @location.id %>
+<% end %>
+| <%= link_to 'Back', locations_path %>

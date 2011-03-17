@@ -1,0 +1,77 @@
+<%= fb_title "Showing #{survivor.profile.formatted_name}" %>
+
+<br/>
+
+<h3>
+<span style='font-size:15px;'><%= "#{survivor.profile.formatted_name}" %></span>
+  <small>
+  <%= link_to 'edit', edit_survivor_path(survivor) %> info
+  <% if survivor.duplicate? %>
+    <span style='color:#FF3030;'>
+    [flagged as duplicate, <%= link_to 'remove flag', :controller => 'survivors', :action => 'remove_duplicate', :id => survivor.id %>]
+    </span>
+  <% end %>
+  </small>
+</h3>
+
+<p>
+<% unless survivor.profile.photo_url.nil? or survivor.profile.photo_url.blank? %>
+  <%= image_tag survivor.profile.photo_url.strip, 
+                :border => 0, :size => '100x100', 
+                :padding_top => '10px',
+                :alt => "#{survivor.profile.formatted_name}" %>
+<% else %>
+  <i>No photo</i>
+<% end %>
+</p>
+
+<%= render :partial => 'profiles/show_survivor', 
+           :locals => {:survivor => survivor,
+                       :profile => survivor.profile} %>
+
+<p>
+<h3>List of updates</h3>
+</p>
+<p>
+<%= link_to 'Add new update', :controller => 'survivor_updates', :action => 'new', :survivor_id => survivor.id %>
+</p>
+<%= render :partial => 'survivor_updates/survivor_updates_list',
+           :locals => {:survivor_updates => survivor.survivor_updates.reverse} %>
+
+<p>
+<% if !current_user.has_friend?(survivor) and !current_user.has_family_member?(survivor) %>
+Add as: <%= link_to 'family', :controller => 'survivors', 
+                                :action => 'add_as_family_member', 
+                                :id => survivor.id %> or
+<%= link_to 'friend', :controller => 'survivors', 
+                      :action => 'add_as_friend', 
+                      :id => survivor.id %> |
+<% elsif !current_user.has_friend?(survivor) and current_user.has_family_member?(survivor) %>
+Add as: <%= link_to 'friend', :controller => 'survivors', 
+                                :action => 'add_as_friend', 
+                                :id => survivor.id %> |
+<% elsif current_user.has_friend?(survivor) and !current_user.has_family_member?(survivor) %>
+Add as: <%= link_to 'family', :controller => 'survivors', 
+                                :action => 'add_as_family', 
+                                :id => survivor.id %> |
+<% end %>
+<%= link_to 'Add new update', :controller => 'survivor_updates', :action => 'new', :survivor_id => survivor.id %> 
+<% unless survivor.duplicate? %>
+| <%= link_to 'Flag as duplicate', :controller => 'survivors', :action => 'duplicate', :id => survivor.id %> 
+<% end %>
+| <%= link_to 'Add new survivor or victim', :controller => 'survivors', :action => 'new' %>
+</p>
+
+<hr/>
+
+<% if survivor.profile.allow_comments? %>
+<div id='comments' style='padding-top: 10px'>
+  <% candelete = current_user.superuser? or survivor.user == current_user %>
+  <%= render :partial => 'shared/fb_comments', :locals => {:model => survivor,
+                                                           :model_name => survivor.profile.formatted_name,
+                                                           :candelete => candelete,
+                                                           :canpost => true,
+                                                           :showform => true,
+                                                           :send_notification_uid => survivor.user.facebook_id} %>
+</div>
+<% end %>

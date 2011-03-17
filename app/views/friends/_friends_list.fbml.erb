@@ -1,0 +1,10 @@
+<div class="friends">
+  <table class="maintable" width="100%" cellspacing="0">
+      <%= render :partial => 'friends/table_header' %>
+      <% friends.each do |friend| %>
+      <%= render :partial => 'friends/friend', 
+                 :locals => {:friend => friend} %>
+    <% end -%>
+</table>
+</div>
+<br/>

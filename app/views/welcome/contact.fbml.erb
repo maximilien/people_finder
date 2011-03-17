@@ -1,0 +1,12 @@
+<%= fb_title 'Contact' %>
+
+<h3>Contact Information</h3>
+
+<p>
+<b>Web site:</b> <a href='http://www.maximilien.com/homepage/about_me.html'>about the app developer</a>
+</p>
+
+<p><b>Email contact</b> <%= mail_to 'maxim@us.ibm.com', nil,
+                                    :encode => 'hex', 
+                                    :replace_at => ' AT ', :replace_dot => ' _ ', 
+                                    :subject => 'Haiti Quake Survivor Contact' %>.</p>
