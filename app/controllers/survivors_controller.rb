@@ -1,3 +1,10 @@
+# 
+# Controller for the Survivor model
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 class SurvivorsController < ApplicationController
   include SearchableHelper
   include TwitterHelper

@@ -1,3 +1,10 @@
+# 
+# Controller for the My updates, e.g., My friends, My family, etc.
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 class MyController < ApplicationController
   def family_members
     @family_members = FamilyMember.paginate :page => params[:page], 

@@ -1,7 +1,14 @@
+# 
+# Main application controller (superclass for all others)
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   
-  const_set 'SUPERUSER_FACEBOOK_IDS', [538750748, 747775148, 728666938, 587528234] unless defined? SUPERUSER_FACEBOOK_IDS
+  const_set 'SUPERUSER_FACEBOOK_IDS', [538750748] unless defined? SUPERUSER_FACEBOOK_IDS
   
   helper :all
   

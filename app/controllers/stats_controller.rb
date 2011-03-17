@@ -1,3 +1,10 @@
+# 
+# Controller for the Stats model
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 class StatsController < ApplicationController
   before_filter :'only_superusers?'
   

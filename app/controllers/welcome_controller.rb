@@ -1,3 +1,10 @@
+# 
+# Welcome controller
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 class WelcomeController < ApplicationController  
   skip_before_filter :ensure_application_is_installed_by_facebook_user, :only => [:privacy_policy, :tou]
   skip_before_filter :set_current_user, :only => [:privacy_policy, :tou]

@@ -1,3 +1,10 @@
+# 
+# Controller for Sharing info on Facebook
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 class SharingsController < ApplicationController
   before_filter :set_sharings_tab
   
