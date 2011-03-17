@@ -1,3 +1,10 @@
+# 
+# Friend model
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+#
+
 class Friend < ActiveRecord::Base
   const_set 'FRIEND', 'Friend' unless defined? FRIEND
   const_set 'GOOD_FRIEND', 'Good friend' unless defined? GOOD_FRIEND

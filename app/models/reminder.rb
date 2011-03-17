@@ -1,3 +1,10 @@
+# 
+# Reminder model
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 class Reminder < ActiveRecord::Base
   const_set 'PROFILE_UPDATE', 'Profile.update' unless defined? PROFILE_UPDATE
   const_set 'PUBLISH_ACTION_REGISTRATION', 'FeedPublisher.publish_action_template' unless defined? PUBLISH_ACTION_REGISTRATION

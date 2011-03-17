@@ -1,20 +1,20 @@
 development:
   adapter: mysql
-  database: haiti_quake_survivors_development
+  database: people_finder_development
   username: root
   password:
   socket: /tmp/mysql.sock
 
 test:
   adapter: mysql
-  database: haiti_quake_survivors_test
+  database: people_finder_test
   username: root
   password:
   socket: /tmp/mysql.sock
 
 production:
   adapter: mysql
-  database: haiti_quake_survivors_production
+  database: people_finder_production
   username: root
   password:
   socket: /tmp/mysql.sock

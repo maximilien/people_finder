@@ -2,7 +2,7 @@
 # Main application controller helper module
 # @author E. M. Maximilien
 # Copyright (C) IBM Corp., 2011
-# License under the MIT license, found here: 
+# License under the MIT license, found here: http://goo.gl/s9uhf
 #
 
 require File.dirname(__FILE__) + '/../../config/haiti_survivors'

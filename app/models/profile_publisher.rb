@@ -1,3 +1,10 @@
+# 
+# Profile publisher
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+#
+
 class ProfilePublisher< Facebooker::Rails::Publisher
  include ApplicationHelper
  

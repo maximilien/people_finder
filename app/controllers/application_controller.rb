@@ -2,7 +2,7 @@
 # Main application controller (superclass for all others)
 # @author E. M. Maximilien
 # Copyright (C) IBM Corp., 2011
-# License under the MIT license, found here: 
+# License under the MIT license, found here: http://goo.gl/s9uhf
 #
 
 class ApplicationController < ActionController::Base
