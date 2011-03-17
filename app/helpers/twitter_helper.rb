@@ -1,3 +1,10 @@
+# 
+# Helper module for the Twitter integration
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 module TwitterHelper
   def generate_random_tweets tweetable_models, number, max=5
     @number = number.to_i || max

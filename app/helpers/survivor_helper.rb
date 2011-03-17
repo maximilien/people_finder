@@ -1,3 +1,10 @@
+# 
+# Helper module for the Survivor model
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 module SurvivorHelper
   const_set 'MISSING', 'Missing' unless defined? MISSING
   const_set 'WELL', 'Well' unless defined? WELL

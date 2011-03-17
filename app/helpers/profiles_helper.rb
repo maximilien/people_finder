@@ -1,3 +1,10 @@
+# 
+# Helper module for Profile controller
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 module ProfilesHelper
   include ApplicationHelper
 

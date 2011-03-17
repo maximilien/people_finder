@@ -1,3 +1,10 @@
+# 
+# Helper module to facilitate Facbooker integration
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 module FacebookerHelper
   INVALID_CHARS = ["," , ".", "'", "`", "[", "]", "{", "}", "(", ")"]
   REPLACED_CHARS= {"," => " ", "." => " ", "[" => "-", "]" => "-", "{" => "-", "}" => "-", 

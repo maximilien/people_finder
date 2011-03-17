@@ -1,3 +1,10 @@
+# 
+# Helper module for the SurvivorUpdate model
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 module SurvivorUpdateHelper  
   const_set 'PHONED', 'Phoned' unless defined? PHONED
   const_set 'EMAILED', 'Emailed' unless defined? EMAILED

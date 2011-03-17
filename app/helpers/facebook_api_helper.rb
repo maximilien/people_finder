@@ -1,3 +1,10 @@
+# 
+# Helper module for the Facebook API
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 module FacebookApiHelper
   def get_facebook_profile_info facebook_user
     profile_hash = {}

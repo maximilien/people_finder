@@ -1,3 +1,10 @@
+# 
+# Main application controller helper module
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 require File.dirname(__FILE__) + '/../../config/haiti_survivors'
 require 'oauth'
 require 'yaml'

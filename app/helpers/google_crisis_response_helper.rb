@@ -1,3 +1,10 @@
+# 
+# Helper module for the integration with Google Crisis response
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 require 'uri'
 require 'net/http'
 

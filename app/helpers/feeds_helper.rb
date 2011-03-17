@@ -1,3 +1,10 @@
+# 
+# Helper module for the Feed Burner integration
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 module FeedsHelper
   def create_time datetime
     Time.mktime datetime.year, datetime.month, datetime.day, datetime.hour, datetime.min, datetime.sec, datetime.usec

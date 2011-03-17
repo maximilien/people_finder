@@ -1,3 +1,10 @@
+# 
+# Helper module for making various models searchable
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: 
+#
+
 module SearchableHelper
   def search
     @query = params[:search][:query] || "" unless params[:search].nil?
