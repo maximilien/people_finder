@@ -14,7 +14,7 @@ DISASTER_COUTRY_NAME = 'Japan' unless defined? DISASTER_COUTRY_NAME
 DISASTER_DATE = 'March 11, 2011' unless defined? DISASTER_DATE
 DISASTER_TYPE = 'earthquake and tsunami' unless defined? DISASTER_TYPE
 
-LOGO_IMAGE_SIZE = '100x75' unless defined? LOGO_IMAGE_SIZE
+LOGO_IMAGE_SIZE = '110x75' unless defined? LOGO_IMAGE_SIZE
 
 BITLY_URL = 'http://bit.ly/esKvbb' unless defined? BITLY_URL
 VERSION_STRING = '1.1.1' unless defined? VERSION_STRING
