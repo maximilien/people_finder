@@ -13,7 +13,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :street1
       t.string :street2
       t.string :city
-      t.string :country, :default => 'Haiti'
+      t.string :country
       t.string :kind
       t.string :web_site_url
       t.string :picture_url
