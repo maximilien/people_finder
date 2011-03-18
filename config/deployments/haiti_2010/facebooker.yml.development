@@ -1,0 +1,40 @@
+# 
+# Sets Facebooker for application (Development)
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
+#
+
+
+development:
+  api_key: b5654f706b65b2444d43181da40ec6b7
+  secret_key: e0d983f5046d53af833bc5a8e6b2075a
+  canvas_page_name: haiti_survivors_dev
+  callback_url: http://web1.tunnlr.com:10141/
+  tunnel:
+    public_host_username: tunnlr47
+    public_host: ssh1.tunnlr.com
+    public_port: 10141
+    local_port: 4000
+
+test:
+  api_key: b5654f706b65b2444d43181da40ec6b7
+  secret_key: e0d983f5046d53af833bc5a8e6b2075a
+  canvas_page_name: haiti_survivors_dev
+  callback_url: http://web1.tunnlr.com:10141/
+  tunnel:
+    public_host_username: tunnlr47
+    public_host: ssh1.tunnlr.com
+    public_port: 10141
+    local_port: 4000
+
+production:
+  api_key: b5654f706b65b2444d43181da40ec6b7
+  secret_key: e0d983f5046d53af833bc5a8e6b2075a
+  canvas_page_name: haiti_survivors_dev
+  callback_url: http://web1.tunnlr.com:10141/
+  tunnel:
+    public_host_username: tunnlr47
+    public_host: ssh1.tunnlr.com
+    public_port: 10141
+    local_port: 4000
