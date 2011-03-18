@@ -25,6 +25,7 @@ BITLY_URL = 'http://bit.ly/esKvbb' unless defined? BITLY_URL
 VERSION_STRING = '1.1.1' unless defined? VERSION_STRING
 CANVAS_NAME = 'japan_people_finder' unless defined? CANVAS_NAME
 HELP_FEEDBACK_URL = "http://www.facebook.com/apps/application.php?api_key=337e99f5cfc5c86fa233d483dc932009" unless defined? HELP_FEEDBACK_URL
+DISCUSSION_BOARD_URL = "http://www.facebook.com/apps/application.php?api_key=337e99f5cfc5c86fa233d483dc93200" unless defined? DISCUSSION_BOARD_URL
 
 DEFAULT_HOSTNAME_STRING = 'vhost0168.dc1.co.us.compute.ihost.com' unless defined? DEFAULT_HOSTNAME_STRING
 DEFAULT_PORT_STRING = '80' unless defined? DEFAULT_PORT_STRING
