@@ -15,6 +15,7 @@ DISASTER_DATE = 'January 12, 2010' unless defined? DISASTER_DATE
 DISASTER_TYPE = 'earthquake' unless defined? DISASTER_TYPE
 DISASTER_CITY = 'Port-au-Prince' unless defined? DISASTER_CITY
 DEFAULT_TIME_ZONE = 'Eastern Time (US & Canada)' unless defined? DEFAULT_TIME_ZONE
+DEFAULT_PHONE_NUMBER_FORMAT = "+509-3-9999-9999" unless defined? DEFAULT_PHONE_NUMBER_FORMAT
 
 CONTACT_WEB_SITE_URL = 'http://www.maximilien.org' unless defined? CONTACT_WEB_SITE_URL
 CONTACT_EMAIL = 'maxim@us.ibm.com' unless defined? CONTACT_EMAIL

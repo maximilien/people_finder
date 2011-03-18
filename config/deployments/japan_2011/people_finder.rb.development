@@ -15,6 +15,7 @@ DISASTER_DATE = 'March 11, 2011' unless defined? DISASTER_DATE
 DISASTER_TYPE = 'earthquake and tsunami' unless defined? DISASTER_TYPE
 DISASTER_CITY = 'Sendai' unless defined? DISASTER_CITY
 DEFAULT_TIME_ZONE = 'Tokyo' unless defined? DEFAULT_TIME_ZONE
+DEFAULT_PHONE_NUMBER_FORMAT = "+81-3-9999-9999" unless defined? DEFAULT_PHONE_NUMBER_FORMAT
 
 CONTACT_WEB_SITE_URL = 'https://researcher.ibm.com/researcher/view_page.php?id=2289' unless defined? CONTACT_WEB_SITE_URL
 CONTACT_EMAIL = 'ccca@us.ibm.com' unless defined? CONTACT_EMAIL
