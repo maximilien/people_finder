@@ -5,7 +5,7 @@
 <%= fb_title "Listing survivor and victims updates" %>
 
 <p>
-<small>List of updates about survivors and victims. Now also on <a href='<%= haiti_quake_survivors_twitter_url %>'>twitter</a>.
+<small>List of updates about survivors and victims. Now also on <a href='<%= people_finder_twitter_url %>'>twitter</a>.
 </small>
 </p>
 
@@ -37,7 +37,7 @@ Create <%= link_to 'new survivor or victim', :controller => 'survivors', :action
 <hr/>
 
 <div id='ibm-logo' align='right'>
-  <%= link_to image_tag('twitter_logo.png', :border => 0, :size => '75x25'), "#{haiti_quake_survivors_twitter_url}" %>
+  <%= link_to image_tag('twitter_logo.png', :border => 0, :size => '75x25'), "#{people_finder_twitter_url}" %>
 </div>
 
 Create <%= link_to 'new survivor or victim', :controller => 'survivors', :action => 'new' %> | <%= link_to 'Missing', :controller => 'survivors', :action => 'new', :status => 'Missing' %> | Confirmed

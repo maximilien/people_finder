@@ -28,7 +28,7 @@
                     :metas => [{:name => 'medium', :content => "blog"},
                                {:name => 'title', :content => "#{location.name} in #{app_name} has #{location.survivors.size} survivors or victims"},
                                {:name => 'description', :content => "Location #{h location.more_details.gsub("<br/>", " ").gsub("<b>", " ").gsub("</b>", " ")}" + "#{(location.description.nil? or location.description.blank?) ? "" : "\n#{location.description}"}"}],
-                    :links => [{:rel => 'target_url', :href => "#{haiti_quake_survivors_url}/locations/show/#{location.id}"}] %>
+                    :links => [{:rel => 'target_url', :href => "#{people_finder_url}/locations/show/#{location.id}"}] %>
 </p>
 <p>
   <b>Name:</b> <%=h location.name %><%= " (#{h location.nickname})" unless location.nickname.nil? or location.nickname.blank? %><br/>
@@ -47,7 +47,7 @@
 </td>
 <td>
 <div id='google-map' align='right'>
-<fb:iframe src='<%= "#{haiti_quake_survivors_raw_url}/locations/show_map/#{location.id}" %>' frameborder='0' width='585' height='390'>
+<fb:iframe src='<%= "#{people_finder_raw_url}/locations/show_map/#{location.id}" %>' frameborder='0' width='585' height='390'>
   <%= render :controller => 'locations', :action => 'show_map', :id => location.id %>
 </fb:iframe>
 </div>
