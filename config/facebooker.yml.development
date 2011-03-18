@@ -5,11 +5,10 @@
 # License under the MIT license, found here: http://goo.gl/s9uhf
 #
 
-
 development:
   api_key: ee86d3486c96a43eb61e7a4eeeb6828a
   secret_key: d70b7677f68fb38faf0dbc79ab674111
-  canvas_page_name: japan_people_finder_dev
+  canvas_page_name: japan_pf_dev
   callback_url: http://web1.tunnlr.com:10141/
   tunnel:
     public_host_username: tunnlr47
@@ -20,7 +19,7 @@ development:
 test:
   api_key: ee86d3486c96a43eb61e7a4eeeb6828a
   secret_key: d70b7677f68fb38faf0dbc79ab674111
-  canvas_page_name: japan_people_finder_dev
+  canvas_page_name: japan_pf_dev
   callback_url: http://web1.tunnlr.com:10141/
   tunnel:
     public_host_username: tunnlr47
@@ -31,7 +30,7 @@ test:
 production:
   api_key: ee86d3486c96a43eb61e7a4eeeb6828a
   secret_key: d70b7677f68fb38faf0dbc79ab674111
-  canvas_page_name: japan_people_finder_dev
+  canvas_page_name: japan_pf_dev
   callback_url: http://web1.tunnlr.com:10141/
   tunnel:
     public_host_username: tunnlr47

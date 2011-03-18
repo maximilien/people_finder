@@ -1,15 +1,15 @@
 # 
-# Sets Facebooker for application (Golden)
+# Sets Facebooker for application (Development)
 # @author E. M. Maximilien
 # Copyright (C) IBM Corp., 2011
 # License under the MIT license, found here: http://goo.gl/s9uhf
 #
 
 development:
-  api_key: 337e99f5cfc5c86fa233d483dc932009
-  secret_key: b925cdf2faf579e18d440c4137631bc0
-  canvas_page_name: japan_people_finder
-  callback_url: http://vhost0168.dc1.co.us.compute.ihost.com/
+  api_key: ee86d3486c96a43eb61e7a4eeeb6828a
+  secret_key: d70b7677f68fb38faf0dbc79ab674111
+  canvas_page_name: japan_pf_dev
+  callback_url: http://web1.tunnlr.com:10141/
   tunnel:
     public_host_username: tunnlr47
     public_host: ssh1.tunnlr.com
@@ -17,10 +17,10 @@ development:
     local_port: 4000
 
 test:
-  api_key: 337e99f5cfc5c86fa233d483dc932009
-  secret_key: b925cdf2faf579e18d440c4137631bc0
-  canvas_page_name: japan_people_finder
-  callback_url: http://vhost0168.dc1.co.us.compute.ihost.com/
+  api_key: ee86d3486c96a43eb61e7a4eeeb6828a
+  secret_key: d70b7677f68fb38faf0dbc79ab674111
+  canvas_page_name: japan_pf_dev
+  callback_url: http://web1.tunnlr.com:10141/
   tunnel:
     public_host_username: tunnlr47
     public_host: ssh1.tunnlr.com
@@ -28,10 +28,10 @@ test:
     local_port: 4000
 
 production:
-  api_key: 337e99f5cfc5c86fa233d483dc932009
-  secret_key: b925cdf2faf579e18d440c4137631bc0
-  canvas_page_name: japan_people_finder
-  callback_url: http://vhost0168.dc1.co.us.compute.ihost.com/
+  api_key: ee86d3486c96a43eb61e7a4eeeb6828a
+  secret_key: d70b7677f68fb38faf0dbc79ab674111
+  canvas_page_name: japan_pf_dev
+  callback_url: http://web1.tunnlr.com:10141/
   tunnel:
     public_host_username: tunnlr47
     public_host: ssh1.tunnlr.com
