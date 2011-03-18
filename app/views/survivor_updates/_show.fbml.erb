@@ -10,7 +10,7 @@
                       :metas => [{:name => 'medium', :content => "blog"},
                                  {:name => 'title', :content => "#{survivor_update.survivor.profile.formatted_name} survivor, or victim, status update is #{survivor_update.status}"},
                                  {:name => 'description', :content => "#{h survivor_update.details}"}],
-                           :links => [{:rel => 'target_url', :href => "#{haiti_quake_survivors_url}/survivor_updates/show/#{survivor_update.id}"}] %>
+                           :links => [{:rel => 'target_url', :href => "#{people_finder_url}/survivor_updates/show/#{survivor_update.id}"}] %>
 </p>
 <p>
   <b>Status:</b> <%=h survivor_update.status %>
