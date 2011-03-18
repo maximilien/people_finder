@@ -17,7 +17,7 @@ First search (e.g., using first and last names), if you find survivor or victim 
   <br/>
 
   <p>
-  <small>List of individuals (hopefully survivors) in Haiti during the January 12th, 2010 earthquake.</small>
+  <small>List of individuals (hopefully survivors) in <%= disaster_country_name %> during the <%= disaster_date %> <%= disaster_type %>.</small>
   </p>
   <p><%= link_to 'New survivor or victim', :controller => 'survivors', :action => 'new' %></p>
   <%= render :partial => 'survivors_list', 
