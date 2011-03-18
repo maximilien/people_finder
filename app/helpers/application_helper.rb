@@ -45,39 +45,39 @@ module ApplicationHelper
     CANVAS_NAME
   end
   
-  def haiti_quake_survivors_bitly_url
-    "http://bit.ly/4p8EqX"
+  def people_finder_bitly_url
+    BITLY_URL
   end
   
-  def haiti_quake_survivors_twitter_url
+  def people_finder_twitter_url
     "http://twitter.com/#{twitter_http_info[:username]}"
   end
   
-  def haiti_quake_survivors_url
+  def people_finder_url
     "http://apps.facebook.com/#{canvas_name}"
   end
   
-  def haiti_quake_survivors_raw_url
+  def people_finder_raw_url
     "http://#{DEFAULT_HOSTNAME_STRING}:#{DEFAULT_PORT_STRING}"
   end
   
-  alias_method :haiti_quake_survivors_url, :haiti_quake_survivors_url
-  alias_method :haiti_quake_survivors_raw_url, :haiti_quake_survivors_raw_url
+  alias_method :people_finder_url, :people_finder_url
+  alias_method :people_finder_raw_url, :people_finder_raw_url
   
-  def haiti_quake_survivors_policy_url
-    haiti_quake_survivors_raw_url + '/welcome/privacy_policy'
+  def people_finder_policy_url
+    people_finder_raw_url + '/welcome/privacy_policy'
   end
   
-  def haiti_quake_survivors_tou_url
-    haiti_quake_survivors_raw_url + '/welcome/tou'
+  def people_finder_tou_url
+    people_finder_raw_url + '/welcome/tou'
   end
   
-  def haiti_quake_survivors_faq_url
-    haiti_quake_survivors_raw_url + '/welcome/faq'
+  def people_finder_faq_url
+    people_finder_raw_url + '/welcome/faq'
   end
   
   def app_name
-    "Haiti Quake People Finder"
+    APP_NAME
   end
   
   def version

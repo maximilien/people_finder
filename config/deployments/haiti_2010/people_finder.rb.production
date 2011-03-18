@@ -9,6 +9,8 @@ require 'yaml'
 
 CREDENTIALS = Yaml.load_file File.dirname(__FILE__) + '/credentials.yml' unless defined? CREDENTIALS
 
+APP_NAME = 'Haiti Quake Survivors' unless defined? APP_NAME
+BITLY_URL = 'http://bit.ly/72C8V3' unless defined? BITLY_URL
 VERSION_STRING = '1.1.1' unless defined? VERSION_STRING
 CANVAS_NAME = 'haiti_survivors' unless defined? CANVAS_NAME
 
