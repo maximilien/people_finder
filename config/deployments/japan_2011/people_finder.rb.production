@@ -10,6 +10,9 @@ require 'yaml'
 CREDENTIALS = Yaml.load_file File.dirname(__FILE__) + '/credentials.yml' unless defined? CREDENTIALS
 
 APP_NAME = 'Japan People Finder' unless defined? APP_NAME
+DISASTER_COUTRY_NAME = 'Japan' unless defined? DISASTER_COUNTRY_NAME
+DISASTER_DATE = 'March 11, 2011' unless defined? DISASTER_DATE
+
 BITLY_URL = 'http://bit.ly/esKvbb' unless defined? BITLY_URL
 VERSION_STRING = '1.1.1' unless defined? VERSION_STRING
 CANVAS_NAME = 'japan_people_finder' unless defined? CANVAS_NAME
