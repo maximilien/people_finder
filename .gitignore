@@ -1,4 +1,4 @@
-.credentials
+.people_finder
 log/*.log
 tmp/**/*
 tmp/*.*
