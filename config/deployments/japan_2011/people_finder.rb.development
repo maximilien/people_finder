@@ -37,3 +37,10 @@ GOOGLE_DB_AUTH_KEY = CREDENTIALS['development']['google_db']['auth_key'] unless 
 GOOGLE_DB_API_URL = CREDENTIALS['development']['google_db']['api_url'] unless defined? GOOGLE_DB_API_URL
 
 DISABLE_TWITTER = true unless defined? DISABLE_TWITTER
+
+SURVIVORS_FEEDBURNER_URL = "http://feeds.feedburner.com/JapanPeopleFinder-SurvivorsAtomFeed" unless defined? SURVIVORS_FEEDBURNER_URL
+SURVIVORS_AND_VICTIMS_FEEDBURNER_URL = "http://feeds.feedburner.com/JapanPeopleFinder-SurvivorsAndVictimsUpdatesAtomFeed" unless defined? SURVIVORS_AND_VICTIMS_FEEDBURNER_URL
+SURVIVOR_UPDATES_MISSING_FEEDBURNER_URL = "http://feeds.feedburner.com/JapanPeopleFinder-MissingUpdatesAtomFeed" unless defined? SURVIVOR_UPDATES_MISSING_FEEDBURNER_URL
+SURVIVOR_UPDATES_OK_FEEDBURNER_URL = "http://feeds.feedburner.com/JapanPeopleFinder-OkUpdatesAtomFeed" unless defined? SURVIVOR_UPDATES_OK_FEEDBURNER_URL
+SURVIVOR_UPDATES_INJURED_FEEDBURNER_URL = "http://feeds.feedburner.com/JapanPeopleFinder-InjuredUpdatesAtomFeed" unless defined? SURVIVOR_UPDATES_INJURED_FEEDBURNER_URL
+SURVIVOR_UPDATES_OTHER_FEEDBURNER_URL = "http://feeds.feedburner.com/JapanPeopleFinder-OtherUpdatesAtomFeed" unless defined? SURVIVOR_UPDATES_OTHER_FEEDBURNER_URL
