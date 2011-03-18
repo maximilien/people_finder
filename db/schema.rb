@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(:version => 21) do
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "nickname"
-    t.text     "description"
     t.string   "street1"
     t.string   "street2"
     t.string   "city"
@@ -54,6 +53,7 @@ ActiveRecord::Schema.define(:version => 21) do
     t.string   "kind"
     t.string   "web_site_url"
     t.string   "picture_url"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "duplicate",    :default => false
@@ -121,7 +121,8 @@ ActiveRecord::Schema.define(:version => 21) do
     t.string   "last_name"
     t.string   "suffix"
     t.string   "nickname"
-    t.text     "about_yourself"
+    t.string   "city"
+    t.string   "country"
     t.string   "email"
     t.string   "web_site_url"
     t.string   "blog_url"
@@ -133,8 +134,7 @@ ActiveRecord::Schema.define(:version => 21) do
     t.string   "photo_url"
     t.boolean  "share_info_with_all", :default => true
     t.boolean  "allow_comments",      :default => true
-    t.string   "city"
-    t.string   "country"
+    t.text     "about_yourself"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
@@ -197,14 +197,13 @@ ActiveRecord::Schema.define(:version => 21) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "profile_id"
     t.integer  "location_id"
     t.string   "last_status"
     t.boolean  "tweeted",     :default => false
     t.boolean  "duplicate",   :default => false
   end
 
-  add_index "survivors", ["profile_id"], :name => "index_survivors_on_profile_id"
+  add_index "survivors", ["location_id"], :name => "index_survivors_on_location_id"
   add_index "survivors", ["user_id"], :name => "index_survivors_on_user_id"
 
   create_table "users", :force => true do |t|
