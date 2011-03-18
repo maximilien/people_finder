@@ -2,8 +2,8 @@
   <fb:request-form action="<%= new_invitation_path %>" 
                    method="POST" invite="true"
                    type="application" 
-                   content="I added the Facebook #{app_name} application. <fb:req-choice url='#{people_finder_url}' label='Accept'/>">
+                   content="I added the Facebook <%= app_name %> application. <fb:req-choice url='<%= people_finder_url %>' label='Accept'/>">
   <fb:multi-friend-selector showborder = "false" 
-    actiontext="Invite your friends to use the #{app_name} application on Facebook." /> 
+    actiontext="Invite your friends to use the <%= app_name %> application on Facebook." /> 
   </fb:request-form> 
 </fb:fbml>
