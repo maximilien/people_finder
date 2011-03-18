@@ -13,7 +13,7 @@ APP_NAME = 'Japan People Finder' unless defined? APP_NAME
 DISASTER_COUTRY_NAME = 'Japan' unless defined? DISASTER_COUTRY_NAME
 DISASTER_DATE = 'March 11, 2011' unless defined? DISASTER_DATE
 DISASTER_TYPE = 'earthquake and tsunami' unless defined? DISASTER_TYPE
-DISASTER_CITY = 'Sendai, Japan' unless defined? DISASTER_CITY
+DISASTER_CITY = 'Sendai' unless defined? DISASTER_CITY
 
 LOGO_IMAGE_SIZE = '100x75' unless defined? LOGO_IMAGE_SIZE
 
