@@ -28,6 +28,10 @@ module ApplicationHelper
     DISASTER_TYPE
   end
   
+  def disaster_city
+    DISASTER_CITY
+  end
+  
   def logo_image_file_name
     'people_finder.png'
   end
