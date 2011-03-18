@@ -13,6 +13,7 @@ APP_NAME = 'Haiti Quake Survivors' unless defined? APP_NAME
 DISASTER_COUTRY_NAME = 'Haiti' unless defined? DISASTER_COUTRY_NAME
 DISASTER_DATE = 'January 12, 2010' unless defined? DISASTER_DATE
 DISASTER_TYPE = 'earthquake and tsunami' unless defined? DISASTER_TYPE
+DISASTER_CITY = 'Port-au-Prince, Haiti' unless defined? DISASTER_CITY
 
 LOGO_IMAGE_SIZE = '50x75' unless defined? LOGO_IMAGE_SIZE
 
