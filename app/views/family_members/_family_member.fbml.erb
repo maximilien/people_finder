@@ -13,7 +13,7 @@
 <td>
 <% share_title = "#{family_member.survivor.profile.formatted_name}'s #{link_to app_name, people_finder_url} information" %>
 <%
-  share_description = %{#{link_to app_name, people_finder_url} is an online Facebook application that can help you locate friends and family (we call them survivors because we are hopeful they are) who were in Haiti when the earthquake of January 12, 2010 hit the island nation.}
+  share_description = %{#{link_to app_name, people_finder_url} is an online Facebook application that can help you locate friends and family (we call them survivors because we are hopeful they are) who were in #{disaster_country} when the #{disaster_type} of #{disaster_date}.}
 %>
 <%= _fb_share_button :meta,
                     :metas => [{:name => 'medium', :content => "blog"},
