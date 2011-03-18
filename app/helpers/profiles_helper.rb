@@ -21,9 +21,7 @@ module ProfilesHelper
   const_set 'CAPORAL', 'Caporal' unless defined? CAPORAL
   const_set 'GENERAL', 'Géneral' unless defined? GENERAL
   const_set 'OTHER', 'Other' unless defined? OTHER
-  const_set 'SALUTATIONS', [MR, MM, MISS, REV, DR,
-                            FRERES, PERE, MONSEIGNEUR, SENATOR, MAJOR, 
-                            CAPORAL, GENERAL, OTHER] unless defined? SALUTATIONS
+  const_set 'SALUTATIONS', [MR, MM, MISS, DR, OTHER] unless defined? SALUTATIONS
   
   const_set 'JR', 'Jr' unless defined? JR
   const_set 'II', 'II' unless defined? II
