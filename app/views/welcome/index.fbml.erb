@@ -2,7 +2,7 @@
 
 <div id='ibm-logo' align='left'>
   <br/>
-  <%= link_to image_tag('people_finder.jpg', :border => 0, :size => '50x75'), '#{people_finder_url}' %>
+  <%= link_to image_tag("#{logo_image_file_name}", :border => 0, :size => "#{logo_image_size}"), '#{people_finder_url}' %>
 </div>
 
 <h2>About <%= app_name %></h2>
@@ -54,11 +54,11 @@ Copyright 2010 &copy;  <a href='http://maximilien.org' alt='Maximilien'>E.M. Max
 
 <div id='google-person-finder' align='center'>
 <p>
-Now all data in <%= link_to "#{app_name}", :controller => 'welcome', :action => 'index' %> are periodically sync with <a href='<%= google_person_finder %>'>Google Person Finder</a> which maintains a centralized DB of all similar applications involved in the Haiti Relief effort, e.g., <a href='http://www.ireport.com/ir-topic-stories.jspa?topicId=381628'>CNN's iReport</a>.
+Now all data in <%= link_to "#{app_name}", :controller => 'welcome', :action => 'index' %> are periodically sync with <a href='<%= google_person_finder_url %>'>Google Person Finder</a> which maintains a centralized DB of all similar applications involved in the Haiti Relief effort, e.g., <a href='http://www.ireport.com/ir-topic-stories.jspa?topicId=381628'>CNN's iReport</a>.
 </p>
 <div id='google-person-finder-iframe' align='center'>
 <iframe
-      src="<%= google_person_finder %>?small=yes"
+      src="<%= google_person_finder_url %>?small=yes"
       width=375 height=230 frameborder=0
       style="border: dashed 2px #77c">
 </iframe>
