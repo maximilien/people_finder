@@ -5,7 +5,7 @@
 # License under the MIT license, found here: http://goo.gl/s9uhf
 #
 
-require File.dirname(__FILE__) + '/../../config/haiti_survivors'
+require File.dirname(__FILE__) + '/../../config/people_finder'
 require 'oauth'
 require 'yaml'
 

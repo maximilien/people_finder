@@ -1,19 +1,21 @@
-#
-# Copyright (C) 2007 IBM Corporation
-# San Jose, CA USA
+# 
+# Customized rake tasks
+# @author E. M. Maximilien
+# Copyright (C) IBM Corp., 2011
+# License under the MIT license, found here: http://goo.gl/s9uhf
 #
 
 require 'rake/gempackagetask'
-require File.dirname(__FILE__) + '/../../config/haiti_survivors'
+require File.dirname(__FILE__) + '/../../config/people_finder'
 
-namespace :haiti_survivors do
+namespace :people_finder do
   GEM_SPEC = Gem::Specification.new do |s|
-    s.name = 'haiti_survivors'
+    s.name = 'people_finder'
     s.version = "#{VERSION_STRING}"
-    s.summary = %{This RoR Facebook application allows quick updates and info on survivors of the January 12th, 2010 earthquake in Haiti.}
-    s.authors = 'IBM Research - Almaden'
+    s.summary = %{This RoR Facebook application allows social updates and crowdsource info on survivors of disasters like the great earthquakes of Haiti in 2010 and Japan in 2011.}
+    s.authors = 'IBM Research - Watson'
     s.email = 'maxim@us.ibm.com'
-    s.homepage = 'http://apps.facebook.com/haiti_quake_survivors/'
+    s.homepage = 'http://apps.facebook.com/japn_people_finder/'
     
     s.add_dependency "capistrano", "= 1.4.1"
     s.add_dependency "cgi_multipart_eof_fix", "= 2.1"
