@@ -40,6 +40,14 @@ module ApplicationHelper
     DEFAULT_TIME_ZONE
   end
   
+  def contact_web_site_url
+    CONTACT_WEB_SITE_URL
+  end
+  
+  def contact_email
+    CONTACT_EMAIL
+  end
+  
   def logo_image_file_name
     'people_finder.png'
   end
