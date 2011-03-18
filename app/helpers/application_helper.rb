@@ -16,6 +16,14 @@ module ApplicationHelper
   include BitlyHelper
   include TwitterHelper
   
+  def disaster_country_name
+    DISASTER_COUTRY_NAME
+  end
+  
+  def disaster_date
+    DISASTER_DATE
+  end
+  
   def site_blurb
   %{<p>
     The purpose of the #{app_name} is to help locate friends and family (we call them survivors because we are hopeful they are) who were in Haiti when the earthquake of January 12, 2010 hit.
