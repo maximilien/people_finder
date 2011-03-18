@@ -17,7 +17,7 @@
         geocoder = new GClientGeocoder();
         address = "<%= @location.address %>";
         address_geo_location = getGeoLocation(geocoder, address); 
-        map.setCenter(geocoder.getLatLng("Port-au-Prince, Haiti", function(point) {}), 13);
+        map.setCenter(geocoder.getLatLng("<%= disaster_city %>", function(point) {}), 13);
       }
     }
     

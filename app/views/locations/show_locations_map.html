@@ -25,7 +25,7 @@
         location_details[<%= i %>] = "<%= location.more_details %>";
         <% i += 1 %>
         <% end %>
-        setMapCenterAndMark(geocoder, "Port-au-Prince, Haiti");
+        setMapCenterAndMark(geocoder, "<%= disaster_city %>");
         markGeoLocations(geocoder, addresses, location_details); 
       }
     }
