@@ -14,11 +14,11 @@ module GoogleCrisisResponseHelper
   # include PfifDbHelper
   
   def domain_root_url
-    "haiti-survivors.org"
+    BITLY_URL
   end
   
   def api_url
-    "http://haiticrisis.appspot.com/api"
+    GOOGLE_DB_API_URL
   end
   
   def auth_key

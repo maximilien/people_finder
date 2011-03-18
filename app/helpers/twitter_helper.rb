@@ -37,6 +37,10 @@ module TwitterHelper
     msg140
   end
   
+  def twitter_tag
+    TWITTER_TAG
+  end
+  
   def twitter_http_info
     TWITTER_HTTP_INFO
   end

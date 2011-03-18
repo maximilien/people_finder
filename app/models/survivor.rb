@@ -153,14 +153,14 @@ class Survivor < ActiveRecord::Base
   private
   
   def show_url
-    "#{haiti_quake_survivors_url}/survivors/show/#{self.id}"
+    "#{people_finder_url}/survivors/show/#{self.id}"
   end
   
   def create_tweet_text
     location_text = (self.location.nil? or self.location.name.nil? or self.location.name.blank?) ? '' : " last location in #{location.name.strip}"
     text = "#{self.profile.formatted_name.strip}'s status is #{self.last_status}#{location_text}, via #{app_name} app"
     hashtags = {:status => self.last_status}
-    hashtags[:haiti] = 'Haiti' if (self.id % (rand(25) + 1) == 0)
+    hashtags[:twitter_tag] = twitter_tag if (self.id % (rand(25) + 1) == 0)
     to_140 text, bitly_shorten(show_url), hashtags
   end
 end

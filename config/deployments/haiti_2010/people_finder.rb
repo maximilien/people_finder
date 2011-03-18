@@ -17,6 +17,8 @@ CANVAS_NAME = 'haiti_survivors' unless defined? CANVAS_NAME
 DEFAULT_HOSTNAME_STRING = '174.129.134.98' unless defined? DEFAULT_HOSTNAME_STRING
 DEFAULT_PORT_STRING = '5000' unless defined? DEFAULT_PORT_STRING
 
+TWITTER_TAG = 'Haiti' unless defined? TWITTER_TAG
+
 TWITTER_OAUTH_INFO = {:consumer_key => CREDENTIALS['production']['twitter']['consumer_key'],
                       :consumer_secret => CREDENTIALS['production']['twitter']['consumer_secret'],
                       :request_token_url => 'http://twitter.com/oauth/request_token',

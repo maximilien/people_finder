@@ -17,6 +17,7 @@ CANVAS_NAME = 'japan_people_finder' unless defined? CANVAS_NAME
 DEFAULT_HOSTNAME_STRING = 'vhost0168.dc1.co.us.compute.ihost.com' unless defined? DEFAULT_HOSTNAME_STRING
 DEFAULT_PORT_STRING = '80' unless defined? DEFAULT_PORT_STRING
 
+TWITTER_TAG = 'Japan' unless defined? TWITTER_TAG
 
 TWITTER_OAUTH_INFO = {:consumer_key => CREDENTIALS['production']['twitter']['consumer_key'],
                       :consumer_secret => CREDENTIALS['production']['twitter']['consumer_secret'],
