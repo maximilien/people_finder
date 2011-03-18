@@ -1,10 +1,10 @@
-atom_feed(:schema_date => "#{Time.now.strftime("%Y-%m-%dT%H:%M:%SZ")}", :root_url => "#{haiti_quake_survivors_url}/feeds/survivors_and_victims.atom") do |feed|
+atom_feed(:schema_date => "#{Time.now.strftime("%Y-%m-%dT%H:%M:%SZ")}", :root_url => "#{people_finder_url}/feeds/survivors_and_victims.atom") do |feed|
   feed.title "#{app_name} - survivors and victims Atom feed"
   feed.updated @survivors.first.created_at unless @survivors.empty?
   feed.updated Time.now if @survivors.empty?
 
   for survivor in @survivors
-    feed.entry(survivor, :url => "#{haiti_quake_survivors_url}/survivors/#{survivor.id}") do |entry|
+    feed.entry(survivor, :url => "#{people_finder_url}/survivors/#{survivor.id}") do |entry|
       entry.title survivor.profile.full_name
       entry.content survivor.feed_description, :type => 'html'
 
