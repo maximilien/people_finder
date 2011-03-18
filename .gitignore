@@ -4,3 +4,6 @@ tmp/**/*
 tmp/*.*
 pkg/**/*
 vendor/plugins/acts_as_solr/solr/solr/data/development/**/*
+vendor/plugins/acts_as_solr/solr/logs/**/*
+vendor/plugins/acts_as_solr/solr/tmp/**/*
+
