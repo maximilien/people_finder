@@ -20,6 +20,8 @@ module ApplicationHelper
     DISASTER_COUTRY_NAME
   end
   
+  alias_method :disaster_country, :disaster_country_name
+  
   def disaster_date
     DISASTER_DATE
   end
@@ -28,9 +30,11 @@ module ApplicationHelper
     DISASTER_TYPE
   end
   
-  def disaster_city
+  def disaster_city_name
     DISASTER_CITY
   end
+  
+  alias_method :disaster_city, :disaster_city_name
   
   def logo_image_file_name
     'people_finder.png'
@@ -88,9 +92,6 @@ module ApplicationHelper
   def people_finder_raw_url
     "http://#{DEFAULT_HOSTNAME_STRING}:#{DEFAULT_PORT_STRING}"
   end
-  
-  alias_method :people_finder_url, :people_finder_url
-  alias_method :people_finder_raw_url, :people_finder_raw_url
   
   def people_finder_policy_url
     people_finder_raw_url + '/welcome/privacy_policy'
