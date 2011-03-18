@@ -32,7 +32,7 @@ class NotificationPublisher < Facebooker::Rails::Publisher
   end
   
   def survivor_update_story_template
-    one_line_story_template "{*actor*} added a survivor or victim update on {*date*} using <a href='#{haiti_quake_survivors_url}'>#{app_name}</a>"
+    one_line_story_template "{*actor*} added a survivor or victim update on {*date*} using <a href='#{people_finder_url}'>#{app_name}</a>"
   end
   
   def survivor_update_story user, survivor_update
@@ -48,7 +48,7 @@ class NotificationPublisher < Facebooker::Rails::Publisher
     from user.facebook_session.user
     fbml <<-MESSAGE 
     <fb:fbml>
-    added a new survivor or victim in the #{link_to app_name, haiti_quake_survivors_url} application.
+    added a new survivor or victim in the #{link_to app_name, people_finder_url} application.
     See <fb:name uid='#{user.facebook_id}' firstnameonly='true' linked='false' useyou='false'/>'s #{link_to 'survivor profile', :controller => 'profiles', :action => 'show', :id => survivor.user.profile.id}.
     </fb:fbml>
     MESSAGE

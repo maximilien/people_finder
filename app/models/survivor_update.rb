@@ -68,14 +68,14 @@ class SurvivorUpdate < ActiveRecord::Base
   private
   
   def show_url
-    "#{haiti_quake_survivors_url}/survivor_updates/show/#{self.id}"
+    "#{people_finder_url}/survivor_updates/show/#{self.id}"
   end
   
   def create_tweet_text
     confirmed_by_text = (self.confirmed? and !self.confirmation_source.nil? and !self.confirmation_source.blank?) ? " confirmed by #{self.confirmation_source}" : ''
     text = "#{self.survivor.profile.formatted_name.strip}'s new status is #{self.status}#{confirmed_by_text} via #{app_name} app"
     hashtags = {:status => self.status}
-    hashtags[:haiti] = 'Haiti' if (self.id % (rand(25) + 1) == 0)
+    hashtags[:twitter_tag] = twitter_tag if (self.id % (rand(25) + 1) == 0)
     to_140 text, bitly_shorten(show_url), hashtags
   end
   

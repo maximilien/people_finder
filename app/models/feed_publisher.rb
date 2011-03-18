@@ -20,7 +20,7 @@ class FeedPublisher < Facebooker::Rails::Publisher
     send_as :user_action 
     from user.facebook_session.user
     story_size ONE_LINE
-    data :app_link => "#{link_to app_name, haiti_quake_survivors_url}",
+    data :app_link => "#{link_to app_name, people_finder_url}",
          :kind => 'survivor',
          :first_name => "#{user.profile.first_name}",
          :profile_link => "#{link_to 'profile', :controller => 'profiles', :action => 'show', :id => user.profile.id}"
