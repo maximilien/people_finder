@@ -24,9 +24,21 @@ module ApplicationHelper
     DISASTER_DATE
   end
   
+  def disaster_type
+    DISASTER_TYPE
+  end
+  
+  def logo_image_file_name
+    'people_finder.png'
+  end
+  
+  def logo_image_size
+    LOGO_IMAGE_SIZE
+  end
+  
   def site_blurb
   %{<p>
-    The purpose of the #{app_name} is to help locate friends and family (we call them survivors because we are hopeful they are) who were in #{disaster_country_name} when the earthquake of #{disaster_date} hit.
+    The purpose of the #{app_name} is to help locate friends and family (we call them survivors because we are hopeful they are) who were in #{disaster_country_name} when the #{disaster_type} of #{disaster_date}.
     </p>
     <p>
     With #{app_name}, you can keep track of the status of friends and family as well as update and share information with Facebook friends. The main goal is to create a socially updated database of these “survivors” that is as accurate as possible, considering the current limited means of communications with #{disaster_country_name}.
