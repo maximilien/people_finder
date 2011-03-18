@@ -21,11 +21,6 @@ class CreateLocations < ActiveRecord::Migration
       
       t.timestamps
     end
-
-    #Initial instances
-    Location.create :name => 'No Location', :nickname => 'NONE', :kind => 'Region', :city => 'Port-au-Prince', :country => 'Haiti'
-    Location.create :name => 'Delmas 83', :nickname => 'DEL', :kind => 'Region', :city => 'Port-au-Prince', :country => 'Haiti'
-    Location.create :name => 'Petion Ville', :nickname => 'PV', :kind => 'City', :city => 'Petion Ville', :country => 'Haiti'
   end
   
   def self.down
