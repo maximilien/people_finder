@@ -1,3 +1,4 @@
+.credentials
 log/*.log
 tmp/**/*
 tmp/*.*
