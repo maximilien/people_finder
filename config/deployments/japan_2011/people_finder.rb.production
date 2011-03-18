@@ -14,6 +14,7 @@ DISASTER_COUTRY_NAME = 'Japan' unless defined? DISASTER_COUTRY_NAME
 DISASTER_DATE = 'March 11, 2011' unless defined? DISASTER_DATE
 DISASTER_TYPE = 'earthquake and tsunami' unless defined? DISASTER_TYPE
 DISASTER_CITY = 'Sendai' unless defined? DISASTER_CITY
+DEFAULT_TIME_ZONE = 'Tokyo' unless defined? DEFAULT_TIME_ZONE
 
 LOGO_IMAGE_SIZE = '110x75' unless defined? LOGO_IMAGE_SIZE
 
