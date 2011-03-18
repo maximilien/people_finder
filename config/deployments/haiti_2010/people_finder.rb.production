@@ -16,6 +16,9 @@ DISASTER_TYPE = 'earthquake' unless defined? DISASTER_TYPE
 DISASTER_CITY = 'Port-au-Prince' unless defined? DISASTER_CITY
 DEFAULT_TIME_ZONE = 'Eastern Time (US & Canada)' unless defined? DEFAULT_TIME_ZONE
 
+CONTACT_WEB_SITE_URL = 'http://www.maximilien.org' unless defined? CONTACT_WEB_SITE_URL
+CONTACT_EMAIL = 'maxim@us.ibm.com' unless defined? CONTACT_EMAIL
+
 LOGO_IMAGE_SIZE = '50x75' unless defined? LOGO_IMAGE_SIZE
 
 BITLY_URL = 'http://bit.ly/72C8V3' unless defined? BITLY_URL

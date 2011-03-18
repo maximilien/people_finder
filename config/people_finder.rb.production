@@ -16,7 +16,10 @@ DISASTER_TYPE = 'earthquake and tsunami' unless defined? DISASTER_TYPE
 DISASTER_CITY = 'Sendai' unless defined? DISASTER_CITY
 DEFAULT_TIME_ZONE = 'Tokyo' unless defined? DEFAULT_TIME_ZONE
 
-LOGO_IMAGE_SIZE = '110x75' unless defined? LOGO_IMAGE_SIZE
+CONTACT_WEB_SITE_URL = 'https://researcher.ibm.com/researcher/view_page.php?id=2289' unless defined? CONTACT_WEB_SITE_URL
+CONTACT_EMAIL = 'ccca@us.ibm.com' unless defined? CONTACT_EMAIL
+
+LOGO_IMAGE_SIZE = '153x187' unless defined? LOGO_IMAGE_SIZE
 
 BITLY_URL = 'http://bit.ly/esKvbb' unless defined? BITLY_URL
 VERSION_STRING = '1.1.1' unless defined? VERSION_STRING
