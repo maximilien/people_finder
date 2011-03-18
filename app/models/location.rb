@@ -64,7 +64,21 @@ class Location < ActiveRecord::Base
     Survivor.find :all, :conditions => ['location_id = ?', self.id]
   end
   
+  def self.no_location
+    name = 'No location'
+    no_location = Location.find_by_name name
+    no_location = Location.create :name => name, :nickname => 'UNKNOWN', :kind => 'Region', :city => "#{Location.new.disaster_city_name}", :country => "#{Location.new.disaster_country_name}" if no_location.nil?
+    no_location
+  end
+  
+  def self.default_location
+    name = "Default - #{Location.new.disaster_city_name}"
+    default_location = Location.find_by_name name
+    default_location = Location.create :name => name, :nickname => 'DEFAULT', :kind => 'City', :city => "#{Location.new.disaster_city_name}", :country => "#{Location.new.disaster_country_name}" if default_location.nil?
+    default_location
+  end
+  
   def self.default
-    Location.find_by_name('No Location') || Location.find_by_name("Default - Port-au-Prince")
+    Location.default_location || Location.no_location
   end
 end
