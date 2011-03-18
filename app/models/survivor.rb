@@ -63,6 +63,7 @@ class Survivor < ActiveRecord::Base
   end
   
   def tweet
+    return if disable_twitter?
     client = Twitter::Base.new twitter_http_auth
     tweet_text = create_tweet_text
     begin

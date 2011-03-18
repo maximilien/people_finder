@@ -5,6 +5,9 @@
 # License under the MIT license, found here: http://goo.gl/s9uhf
 #
 
+#TODO: figure out how to enable
+#require 'twitter'
+
 module TwitterHelper
   def generate_random_tweets tweetable_models, number, max=5
     @number = number.to_i || max
