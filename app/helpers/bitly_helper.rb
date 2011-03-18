@@ -5,7 +5,8 @@
 # License under the MIT license, found here: http://goo.gl/s9uhf
 #
 
-require 'bitly'
+# TODO: fix rack issue
+#require 'bitly'
 
 module BitlyHelper
   def bitly_info
