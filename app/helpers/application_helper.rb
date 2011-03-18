@@ -36,6 +36,10 @@ module ApplicationHelper
   
   alias_method :disaster_city, :disaster_city_name
   
+  def default_time_zone
+    DEFAULT_TIME_ZONE
+  end
+  
   def logo_image_file_name
     'people_finder.png'
   end
