@@ -2,34 +2,35 @@
 
 <% form_for(location) do |f| %>
   <p>
-    <b>Location name: </b><%= f.text_field :name, :size => 25 %> <small>e.g., Delmas 83</small>
+    <b>Location name: </b><%= f.text_field :name, :size => 45 %> 
   </p>
   <p>
     <b>Kind: </b><%=  collection_select :location, :kind, Location::KINDS, :to_s, :to_s %>
-    <b>Location nickname: </b><%= f.text_field :nickname, :size => 7 %> <small>optional e.g., Pacot</small>
+    <b>Location nickname: </b><%= f.text_field :nickname, :size => 17 %> <small>(optional)</small><br/>
   </p>
   <p>
   <b>Picture URL: </b>
-  <%= f.text_field :picture_url, :size => 47 %><small>(optional)</small><br/>
+  <%= f.text_field :picture_url, :size => 49 %><small>(optional)</small><br/>
   <b>Web site URL: </b>
   <%= f.text_field :web_site_url, :size => 47 %><small>(optional)</small><br/>
   </p>
   <p>
     <b>Description</b> <small>optional short description for location</small><br />
-    <%= f.text_area :description, :rows => 7, :cols => 60 %>
+    <%= f.text_area :description, :rows => 7, :cols => 46 %>
   </p>
   <p>
-    <b>Street: </b>
-    <%= f.text_field :street1, :size => 25 %> <small>e.g., Route de Delmas</small><br/>
-    <%= f.text_field :street2, :size => 31 %>
+    <b>Street 1: </b>
+    <%= f.text_field :street1, :size => 54 %><br/>
+    <b>Street 2: </b>
+    <%= f.text_field :street2, :size => 54 %>
   </p>
   <p>
     <b>City: </b>
-    <%= f.text_field :city, :size => 35, :value => 'Port-au-Prince' %> <small>e.g., Petion Ville</small>
+    <%= f.text_field :city, :size => 58 %><small>e.g., <%= "#{disaster_city_name}" %> </small>
   </p>
   <p>
     <b>Country</b>
-    <%= country_select :country, :country, ['Haiti'] %><br/>
+    <%= country_select :location, :country, ["#{disaster_country_name}"] %><br/>
   </p>
   <p>
   

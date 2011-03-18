@@ -6,7 +6,7 @@
 
 <h3>List of locations</h3>
 
-<p><small>List of locations in Haiti where we are looking for survivors in the aftermath of the January 12th, 2010 earthquake.</small></p>
+<p><small>List of locations in <%= disaster_country %> where we are looking for survivors in the aftermath of the <%= disaster_date %> <%= disaster_type %>.</small></p>
 
 <p><%= link_to 'New location', new_location_path %> | <%= link_to 'Map of all locations', :controller => 'locations', :action => 'show_all_locations' %></p>
 
