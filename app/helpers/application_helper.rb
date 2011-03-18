@@ -40,6 +40,10 @@ module ApplicationHelper
     DEFAULT_TIME_ZONE
   end
   
+  def default_phone_number_format
+    DEFAULT_PHONE_NUMBER_FORMAT
+  end
+  
   def contact_web_site_url
     CONTACT_WEB_SITE_URL
   end
