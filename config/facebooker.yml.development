@@ -7,9 +7,9 @@
 
 
 development:
-  api_key: b5654f706b65b2444d43181da40ec6b7
-  secret_key: e0d983f5046d53af833bc5a8e6b2075a
-  canvas_page_name: haiti_survivors_dev
+  api_key: ee86d3486c96a43eb61e7a4eeeb6828a
+  secret_key: d70b7677f68fb38faf0dbc79ab674111
+  canvas_page_name: japan_people_finder_dev
   callback_url: http://web1.tunnlr.com:10141/
   tunnel:
     public_host_username: tunnlr47
@@ -18,9 +18,9 @@ development:
     local_port: 4000
 
 test:
-  api_key: b5654f706b65b2444d43181da40ec6b7
-  secret_key: e0d983f5046d53af833bc5a8e6b2075a
-  canvas_page_name: haiti_survivors_dev
+  api_key: ee86d3486c96a43eb61e7a4eeeb6828a
+  secret_key: d70b7677f68fb38faf0dbc79ab674111
+  canvas_page_name: japan_people_finder_dev
   callback_url: http://web1.tunnlr.com:10141/
   tunnel:
     public_host_username: tunnlr47
@@ -29,9 +29,9 @@ test:
     local_port: 4000
 
 production:
-  api_key: b5654f706b65b2444d43181da40ec6b7
-  secret_key: e0d983f5046d53af833bc5a8e6b2075a
-  canvas_page_name: haiti_survivors_dev
+  api_key: ee86d3486c96a43eb61e7a4eeeb6828a
+  secret_key: d70b7677f68fb38faf0dbc79ab674111
+  canvas_page_name: japan_people_finder_dev
   callback_url: http://web1.tunnlr.com:10141/
   tunnel:
     public_host_username: tunnlr47

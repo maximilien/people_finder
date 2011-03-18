@@ -43,8 +43,8 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_haiti_survivors_session',
-    :secret      => "L'Union fait la force"
+    :session_key => '_people_finder_session',
+    :secret      => "L'Union fait la force, Land of the rising sun"
   }
   
   # Use the database for sessions instead of the cookie-based default,
@@ -64,7 +64,7 @@ Rails::Initializer.run do |config|
   config.active_record.default_timezone = :utc
   
   # Load global LegalTorrents configuration
-  require File.dirname(__FILE__) + '/haiti_survivors'
+  require File.dirname(__FILE__) + '/people_finder'
 end
 
 # Load the twitter gem
