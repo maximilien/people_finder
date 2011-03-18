@@ -81,6 +81,10 @@ module ApplicationHelper
    HELP_FEEDBACK_URL 
   end
   
+  def discussion_board_url
+   DISCUSSION_BOARD_URL 
+  end
+  
   def canvas_name
     CANVAS_NAME
   end
