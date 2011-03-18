@@ -25,6 +25,7 @@ BITLY_URL = 'http://bit.ly/72C8V3' unless defined? BITLY_URL
 VERSION_STRING = '1.1.1' unless defined? VERSION_STRING
 CANVAS_NAME = 'haiti_survivors_dev' unless defined? CANVAS_NAME
 HELP_FEEDBACK_URL = "http://www.facebook.com/apps/application.php?api_key=8090a7f445674bafcd40039ad728a4a5" unless defined? HELP_FEEDBACK_URL
+DISCUSSION_BOARD_URL = "http://www.facebook.com/apps/application.php?api_key=8090a7f445674bafcd40039ad728a4a5" unless defined? DISCUSSION_BOARD_URL
 
 DEFAULT_HOSTNAME_STRING = 'web1.tunnlr.com' unless defined? DEFAULT_HOSTNAME_STRING
 DEFAULT_PORT_STRING = '10141' unless defined? DEFAULT_PORT_STRING
