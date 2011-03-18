@@ -37,3 +37,10 @@ GOOGLE_DB_AUTH_KEY = CREDENTIALS['production']['google_db']['auth_key'] unless d
 GOOGLE_DB_API_URL = CREDENTIALS['production']['google_db']['api_url'] unless defined? GOOGLE_DB_API_URL
 
 DISABLE_TWITTER = true unless defined? DISABLE_TWITTER
+
+SURVIVORS_FEEDBURNER_URL = "http://feeds.feedburner.com/HaitiQuakePeopleFinder-SurvivorsAtomFeed" unless defined? SURVIVORS_FEEDBURNER_URL
+SURVIVORS_AND_VICTIMS_FEEDBURNER_URL = "http://feeds.feedburner.com/HaitiQuakePeopleFinder-SurvivorsAndVictimsUpdatesAtomFeed" unless defined? SURVIVORS_AND_VICTIMS_FEEDBURNER_URL
+SURVIVOR_UPDATES_MISSING_FEEDBURNER_URL = "http://feeds.feedburner.com/HaitiQuakePeopleFinder-MissingUpdatesAtomFeed" unless defined? SURVIVOR_UPDATES_MISSING_FEEDBURNER_URL
+SURVIVOR_UPDATES_OK_FEEDBURNER_URL = "http://feeds.feedburner.com/HaitiQuakePeopleFinder-OkUpdatesAtomFeed" unless defined? SURVIVOR_UPDATES_OK_FEEDBURNER_URL
+SURVIVOR_UPDATES_INJURED_FEEDBURNER_URL = "http://feeds.feedburner.com/HaitiQuakePeopleFinder-InjuredUpdatesAtomFeed" unless defined? SURVIVOR_UPDATES_INJURED_FEEDBURNER_URL
+SURVIVOR_UPDATES_OTHER_FEEDBURNER_URL = "http://feeds.feedburner.com/HaitiQuakePeopleFinder-OtherUpdatesAtomFeed" unless defined? SURVIVOR_UPDATES_OTHER_FEEDBURNER_URL
