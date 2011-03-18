@@ -1,5 +1,5 @@
 # 
-# Sets up globally accessible configuration for the application
+# Sets up globally accessible configuration for the application (Development)
 # @author E. M. Maximilien
 # Copyright (C) IBM Corp., 2011
 # License under the MIT license, found here: http://goo.gl/s9uhf
@@ -7,41 +7,44 @@
 
 require 'yaml'
 
-CREDENTIALS = Yaml.load_file File.dirname(__FILE__) + '/credentials.yml' unless defined? CREDENTIALS
+CREDENTIALS = YAML.load_file File.dirname(__FILE__) + '/credentials.yml' unless defined? CREDENTIALS
 
 APP_NAME = 'Japan People Finder' unless defined? APP_NAME
-DISASTER_COUTRY_NAME = 'Japan' unless defined? DISASTER_COUNTRY_NAME
+DISASTER_COUTRY_NAME = 'Japan' unless defined? DISASTER_COUTRY_NAME
 DISASTER_DATE = 'March 11, 2011' unless defined? DISASTER_DATE
+DISASTER_TYPE = 'earthquake and tsunami' unless defined? DISASTER_TYPE
+
+LOGO_IMAGE_SIZE = '100x75' unless defined? LOGO_IMAGE_SIZE
 
 BITLY_URL = 'http://bit.ly/esKvbb' unless defined? BITLY_URL
 VERSION_STRING = '1.1.1' unless defined? VERSION_STRING
-CANVAS_NAME = 'japan_people_finder' unless defined? CANVAS_NAME
+CANVAS_NAME = 'japan_pf_dev' unless defined? CANVAS_NAME
 HELP_FEEDBACK_URL = "http://www.facebook.com/apps/application.php?api_key=337e99f5cfc5c86fa233d483dc932009" unless defined? HELP_FEEDBACK_URL
 
-DEFAULT_HOSTNAME_STRING = 'vhost0168.dc1.co.us.compute.ihost.com' unless defined? DEFAULT_HOSTNAME_STRING
-DEFAULT_PORT_STRING = '80' unless defined? DEFAULT_PORT_STRING
+DEFAULT_HOSTNAME_STRING = 'web1.tunnlr.com' unless defined? DEFAULT_HOSTNAME_STRING
+DEFAULT_PORT_STRING = '10141' unless defined? DEFAULT_PORT_STRING
 
 TWITTER_TAG = 'Japan' unless defined? TWITTER_TAG
 
-TWITTER_OAUTH_INFO = {:consumer_key => CREDENTIALS['production']['twitter']['consumer_key'],
-                      :consumer_secret => CREDENTIALS['production']['twitter']['consumer_secret'],
+TWITTER_OAUTH_INFO = {:consumer_key => CREDENTIALS['development']['twitter']['consumer_key'],
+                      :consumer_secret => CREDENTIALS['development']['twitter']['consumer_secret'],
                       :request_token_url => 'http://twitter.com/oauth/request_token',
                       :access_token_url => 'http://twitter.com/oauth/access_token',
                       :authorize_url => 'http://twitter.com/oauth/authorize'} unless defined? TWITTER_OAUTH_INFO
 
-TWITTER_HTTP_INFO = {:username => CREDENTIALS['production']['twitter']['username'], 
-                     :password => CREDENTIALS['production']['twitter']['password']} unless defined? TWITTER_HTTP_INFO
+TWITTER_HTTP_INFO = {:username => CREDENTIALS['development']['twitter']['username'], 
+                     :password => CREDENTIALS['development']['twitter']['password']} unless defined? TWITTER_HTTP_INFO
 
 TWITTER_OAUTH_YML = 'lib/twitter/oauth.dev.yml' unless defined? TWITTER_OAUTH_YML
 
-BITLY_INFO = {:login => CREDENTIALS['production']['bitly']['login'], 
-              :api_key => CREDENTIALS['production']['twitter']['api_key']} unless defined? BITLY_INFO
+BITLY_INFO = {:login => CREDENTIALS['development']['bitly']['login'], 
+              :api_key => CREDENTIALS['development']['twitter']['api_key']} unless defined? BITLY_INFO
 
-GOOGLE_PERSON_FINDER_URL = 'http://japancrisis.appspot.com' unless defined? GOOGLE_PERSON_FINDER_URL
+GOOGLE_PERSON_FINDER_URL = 'http://japan.person-finder.appspot.com' unless defined? GOOGLE_PERSON_FINDER_URL
 
-GOOGLE_MAPS_API_KEY = CREDENTIALS['production']['google_maps']['api_key'] unless defined? GOOGLE_MAPS_API_KEY
+GOOGLE_MAPS_API_KEY = CREDENTIALS['development']['google_maps']['api_key'] unless defined? GOOGLE_MAPS_API_KEY
 
-GOOGLE_DB_AUTH_KEY = CREDENTIALS['production']['google_db']['auth_key'] unless defined? GOOGLE_DB_AUTH_KEY
+GOOGLE_DB_AUTH_KEY = CREDENTIALS['development']['google_db']['auth_key'] unless defined? GOOGLE_DB_AUTH_KEY
 GOOGLE_DB_API_URL = CREDENTIALS['production']['google_db']['api_url'] unless defined? GOOGLE_DB_API_URL
 
 DISABLE_TWITTER = true unless defined? DISABLE_TWITTER

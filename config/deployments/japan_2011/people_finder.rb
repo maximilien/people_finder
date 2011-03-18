@@ -7,11 +7,14 @@
 
 require 'yaml'
 
-CREDENTIALS = Yaml.load_file File.dirname(__FILE__) + '/credentials.yml' unless defined? CREDENTIALS
+CREDENTIALS = YAML.load_file File.dirname(__FILE__) + '/credentials.yml' unless defined? CREDENTIALS
 
 APP_NAME = 'Japan People Finder' unless defined? APP_NAME
-DISASTER_COUTRY_NAME = 'Japan' unless defined? DISASTER_COUNTRY_NAME
+DISASTER_COUTRY_NAME = 'Japan' unless defined? DISASTER_COUTRY_NAME
 DISASTER_DATE = 'March 11, 2011' unless defined? DISASTER_DATE
+DISASTER_TYPE = 'earthquake and tsunami' unless defined? DISASTER_TYPE
+
+LOGO_IMAGE_SIZE = '100x75' unless defined? LOGO_IMAGE_SIZE
 
 BITLY_URL = 'http://bit.ly/esKvbb' unless defined? BITLY_URL
 VERSION_STRING = '1.1.1' unless defined? VERSION_STRING
@@ -37,7 +40,7 @@ TWITTER_OAUTH_YML = 'lib/twitter/oauth.dev.yml' unless defined? TWITTER_OAUTH_YM
 BITLY_INFO = {:login => CREDENTIALS['production']['bitly']['login'], 
               :api_key => CREDENTIALS['production']['twitter']['api_key']} unless defined? BITLY_INFO
 
-GOOGLE_PERSON_FINDER_URL = 'http://japancrisis.appspot.com' unless defined? GOOGLE_PERSON_FINDER_URL
+GOOGLE_PERSON_FINDER_URL = 'http://japan.person-finder.appspot.com' unless defined? GOOGLE_PERSON_FINDER_URL
 
 GOOGLE_MAPS_API_KEY = CREDENTIALS['production']['google_maps']['api_key'] unless defined? GOOGLE_MAPS_API_KEY
 

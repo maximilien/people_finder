@@ -66,6 +66,3 @@ Rails::Initializer.run do |config|
   # Load global LegalTorrents configuration
   require File.dirname(__FILE__) + '/people_finder'
 end
-
-# Load the twitter gem
-require 'twitter'
