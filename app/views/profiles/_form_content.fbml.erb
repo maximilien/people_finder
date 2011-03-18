@@ -50,26 +50,27 @@
   <p>
     <hr/>
     <b>Email: </b>
-    <%= text_field :profile, :email, :size => 30, :value => profile.email %><small>(optional)</small><br/>
+    <%= text_field :profile, :email, :size => 85, :value => profile.email %><small>(optional)</small><br/>
     <b>Mobile phone: </b>
-    <%= text_field :profile, :mobile_phone, :size => 25, :value => profile.mobile_phone %> <small>e.g., (123)456-7890 (optional)</small><br/>
+    <%= text_field :profile, :mobile_phone, :size => 76, :value => profile.mobile_phone %> <small>e.g., <%= default_phone_number_format %> (optional)</small><br/>
     <b>Home phone: </b>
     <%= text_field :profile, :home_phone, :size => 25, :value => profile.home_phone %> <small>(optional)</small>
     <b>Work phone: </b>
     <%= text_field :profile, :work_phone, :size => 22, :value => profile.work_phone %><small>(optional)</small>
+    <br/>
+    <b>Twitter: </b>
+    <%= text_field :profile, :twitter, :size => 83, :value => profile.twitter %><small>e.g., @<%= twitter_http_info[:username] %> (optional)</small><br/>
   </p>
 
 <% unless hidden_fields[:web_info] %>
   <hr/>
   <p>
-  <b>Twitter: </b>
-  <%= text_field :profile, :twitter, :size => 33, :value => profile.twitter %><small>(optional)</small><br/>
   <b>Web page: </b>
   <%= text_field :profile, :web_site_url, :size => 40, :value => profile.web_site_url %><small>(optional)</small><br/>
   <b>Blog: </b>
   <%= text_field :profile, :blog_url, :size => 44, :value => profile.blog_url %><small>(optional)</small><br/>
   </p>
-  <% end %>
+<% end %>
 
 <% unless hidden_fields[:about_yourself] %>
   <hr/>
