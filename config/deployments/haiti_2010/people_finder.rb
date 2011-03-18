@@ -34,5 +34,6 @@ BITLY_INFO = {:login => CREDENTIALS['production']['bitly']['login'],
 GOOGLE_MAPS_API_KEY = CREDENTIALS['production']['google_maps']['api_key'] unless defined? GOOGLE_MAPS_API_KEY
 
 GOOGLE_DB_AUTH_KEY = CREDENTIALS['production']['google_db']['auth_key'] unless defined? GOOGLE_DB_AUTH_KEY
+GOOGLE_DB_API_URL = CREDENTIALS['production']['google_db']['api_url'] unless defined? GOOGLE_DB_API_URL
 
 DISABLE_TWITTER = true unless defined? DISABLE_TWITTER
