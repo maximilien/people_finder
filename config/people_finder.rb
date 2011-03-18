@@ -17,6 +17,7 @@ CANVAS_NAME = 'japan_people_finder' unless defined? CANVAS_NAME
 DEFAULT_HOSTNAME_STRING = 'vhost0168.dc1.co.us.compute.ihost.com' unless defined? DEFAULT_HOSTNAME_STRING
 DEFAULT_PORT_STRING = '80' unless defined? DEFAULT_PORT_STRING
 
+
 TWITTER_OAUTH_INFO = {:consumer_key => CREDENTIALS['production']['twitter']['consumer_key'],
                       :consumer_secret => CREDENTIALS['production']['twitter']['consumer_secret'],
                       :request_token_url => 'http://twitter.com/oauth/request_token',
@@ -34,5 +35,6 @@ BITLY_INFO = {:login => CREDENTIALS['production']['bitly']['login'],
 GOOGLE_MAPS_API_KEY = CREDENTIALS['production']['google_maps']['api_key'] unless defined? GOOGLE_MAPS_API_KEY
 
 GOOGLE_DB_AUTH_KEY = CREDENTIALS['production']['google_db']['auth_key'] unless defined? GOOGLE_DB_AUTH_KEY
+GOOGLE_DB_API_URL = CREDENTIALS['production']['google_db']['api_url'] unless defined? GOOGLE_DB_API_URL
 
 DISABLE_TWITTER = true unless defined? DISABLE_TWITTER
