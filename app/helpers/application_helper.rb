@@ -26,10 +26,10 @@ module ApplicationHelper
   
   def site_blurb
   %{<p>
-    The purpose of the #{app_name} is to help locate friends and family (we call them survivors because we are hopeful they are) who were in Haiti when the earthquake of January 12, 2010 hit.
+    The purpose of the #{app_name} is to help locate friends and family (we call them survivors because we are hopeful they are) who were in #{disaster_country_name} when the earthquake of #{disaster_date} hit.
     </p>
     <p>
-    With #{app_name}, you can keep track of the status of friends and family as well as update and share information with Facebook friends. The main goal is to create a socially updated database of these “survivors” that is as accurate as possible, considering the current limited means of communications with Haiti.
+    With #{app_name}, you can keep track of the status of friends and family as well as update and share information with Facebook friends. The main goal is to create a socially updated database of these “survivors” that is as accurate as possible, considering the current limited means of communications with #{disaster_country_name}.
     </p>}
   end
   
@@ -42,11 +42,11 @@ module ApplicationHelper
   end
   
   def site_blurb_short
-    %{The purpose of the #{app_name} is to help locate friends and family (we call them survivors because we are hopeful they are) who were in Haiti when the earthquake of January 12, 2010 hit Haiti.}
+    %{The purpose of the #{app_name} is to help locate friends and family (we call them survivors because we are hopeful they are) who were in #{disaster_country_name} when the earthquake of #{disaster_date}.}
   end
   
   def help_feedback_url
-    "http://www.facebook.com/apps/application.php?api_key=8090a7f445674bafcd40039ad728a4a5"
+   HELP_FEEDBACK_URL 
   end
   
   def canvas_name
