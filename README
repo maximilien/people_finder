@@ -1,14 +1,23 @@
-== Welcome to haiti_survivors
+== Welcome to people_finder application for Facebook
 
-About Haiti Quake People Finder
-The purpose of the Haiti Quake People Finder is to help locate friends and family (we call them survivors because we are hopeful they are) who were in Haiti when the earthquake of January 12, 2010 hit.
+About People Finder
+The purpose of the Facebook People Finder is to help locate friends and family (we call them survivors because we are hopeful they are) who are lost during disasters.
 
-With Haiti Quake People Finder, you can keep track of the status of friends and family as well as update and share information with Facebook friends. The main goal is to create a socially updated database of these “survivors” that is as accurate as possible, considering the current limited means of communications with Haiti.
+This application was first created for the Haiti Quake of Jan 12, 2010 and refactored/generalized and open-sourced to be released for the great quake of March 11, 2011 in the north of Japan.
 
-Access the live app deployed on Facebook: http://apps.facebook.com/haiti_survivors
+With Facebook People Finder, you can keep track of the status of friends and family as well as update and share information with Facebook friends. The main goal is to create a socially updated database of these “survivors” that is as accurate as possible, considering the current limited means of communications with Haiti.
+
+Access the live app deployed for the Japan Quake & Tsunami on Facebook: http://apps.facebook.com/japan_people_finder
 
 == Copyright
 
-(C) E. M. Maximilien from IBM Research - Almaden
+IBM Corporation
+E. M. Maximilien from IBM Research - Watson
 http://maximilien.org
-maxim@us.ibm.com
+maxim at us dot ibm dot com
+
+== License
+
+Released under the MIT license.  
+
+See LICENSE file or here: http://goo.gl/s9uhf
