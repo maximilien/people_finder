@@ -54,17 +54,17 @@ Note that some info in your <%= app_name %> profile are not part of your Faceboo
   <b>Nickname: </b>
   <%= text_field :profile, :nickname, :size => 35 %><small>(optional)</small>
   <b>Citizen of: </b>
-    <%= country_select :profile, :citizen_of, ['Haiti', 'United States', 'Canada', 'France'], {:include_blank => true} %><small>(optional)</small>
+    <%= country_select :profile, :citizen_of, ["#{disaster_country}", 'United States', 'Canada'], {:include_blank => true} %><small>(optional)</small>
   </p>
 
   <p>
   <% unless hidden_fields[:time_zone] %>
-    <b>Time zone: </b><%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, :default => "Eastern Time (US & Canada)" %>
+    <b>Time zone: </b><%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, :default => "#{default_time_zone}" %>
   <% end %>
 
   <% unless hidden_fields[:country] %>
     <b>Country</b>
-    <%= country_select :profile, :country, ['Haiti', 'United States', 'Canada', 'France'], {:include_blank => true} %><br/>
+    <%= country_select :profile, :country, ["#{disaster_country}", 'United States', 'Canada'], {:include_blank => true} %><br/>
   <% end %>
   </p>
   
