@@ -61,6 +61,10 @@ module ApplicationHelper
     "http://twitter.com/#{twitter_http_info[:username]}"
   end
   
+  def google_person_finder_url
+    GOOGLE_PERSON_FINDER_URL
+  end
+  
   def people_finder_url
     "http://apps.facebook.com/#{canvas_name}"
   end

@@ -2,7 +2,7 @@
 
 <div id='ibm-logo' align='left'>
   <br/>
-  <%= link_to image_tag('haiti_quake_survivors2.jpg', :border => 0, :size => '50x75'), '#{haiti_quake_survivors_url}' %>
+  <%= link_to image_tag('people_finder.jpg', :border => 0, :size => '50x75'), '#{people_finder_url}' %>
 </div>
 
 <h2>About <%= app_name %></h2>
@@ -12,9 +12,9 @@
 <tr>
 <td>
 <div id='twitter' align='left'>
-  Follow us on <a href='<%= haiti_quake_survivors_twitter_url %>'>twitter</a> to get live updates of existing survivors and victims as well as newly added entries in order to help send relief faster.
+  Follow us on <a href='<%= people_finder_twitter_url %>'>twitter</a> to get live updates of existing survivors and victims as well as newly added entries in order to help send relief faster.
   <p>
-  <%= link_to image_tag('twitter_logo.png', :border => 0, :size => '160x43'), "#{haiti_quake_survivors_twitter_url}" %>
+  <%= link_to image_tag('twitter_logo.png', :border => 0, :size => '160x43'), "#{people_finder_twitter_url}" %>
   </p>
 </div>
 </td>
@@ -54,11 +54,11 @@ Copyright 2010 &copy;  <a href='http://maximilien.org' alt='Maximilien'>E.M. Max
 
 <div id='google-person-finder' align='center'>
 <p>
-Now all data in <%= link_to "#{app_name}", :controller => 'welcome', :action => 'index' %> are periodically sync with <a href='http://haiticrisis.appspot.com/'>Google Person Finder</a> which maintains a centralized DB of all similar applications involved in the Haiti Relief effort, e.g., <a href='http://www.ireport.com/ir-topic-stories.jspa?topicId=381628'>CNN's iReport</a>.
+Now all data in <%= link_to "#{app_name}", :controller => 'welcome', :action => 'index' %> are periodically sync with <a href='<%= google_person_finder %>'>Google Person Finder</a> which maintains a centralized DB of all similar applications involved in the Haiti Relief effort, e.g., <a href='http://www.ireport.com/ir-topic-stories.jspa?topicId=381628'>CNN's iReport</a>.
 </p>
 <div id='google-person-finder-iframe' align='center'>
 <iframe
-      src="http://haiticrisis.appspot.com/?small=yes"
+      src="<%= google_person_finder %>?small=yes"
       width=375 height=230 frameborder=0
       style="border: dashed 2px #77c">
 </iframe>

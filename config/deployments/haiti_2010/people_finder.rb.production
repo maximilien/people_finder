@@ -37,6 +37,8 @@ TWITTER_OAUTH_YML = 'lib/twitter/oauth.dev.yml' unless defined? TWITTER_OAUTH_YM
 BITLY_INFO = {:login => CREDENTIALS['production']['bitly']['login'], 
               :api_key => CREDENTIALS['production']['twitter']['api_key']} unless defined? BITLY_INFO
 
+GOOGLE_PERSON_FINDER_URL = 'http://haiticrisis.appspot.com' unless defined? GOOGLE_PERSON_FINDER_URL
+
 GOOGLE_MAPS_API_KEY = CREDENTIALS['production']['google_maps']['api_key'] unless defined? GOOGLE_MAPS_API_KEY
 
 GOOGLE_DB_AUTH_KEY = CREDENTIALS['production']['google_db']['auth_key'] unless defined? GOOGLE_DB_AUTH_KEY
