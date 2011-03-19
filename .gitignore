@@ -1,4 +1,5 @@
 .people_finder
+config/credentials.yml
 log/*.log
 tmp/**/*
 tmp/*.*
