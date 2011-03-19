@@ -20,6 +20,9 @@ DEFAULT_PHONE_NUMBER_FORMAT = "+509-3-9999-9999" unless defined? DEFAULT_PHONE_N
 CONTACT_WEB_SITE_URL = 'http://www.maximilien.org' unless defined? CONTACT_WEB_SITE_URL
 CONTACT_EMAIL = 'maxim@us.ibm.com' unless defined? CONTACT_EMAIL
 
+DEPLOYMENT_YEAR = '2010' unless defined? DEPLOYMENT_YEAR
+DEPLOYMENT_ORGANIZATION_NAME = 'E. M. Maximilien' unless defined? DEPLOYMENT_ORGANIZATION_NAME
+
 LOGO_IMAGE_SIZE = '50x75' unless defined? LOGO_IMAGE_SIZE
 
 BITLY_URL = 'http://bit.ly/72C8V3' unless defined? BITLY_URL

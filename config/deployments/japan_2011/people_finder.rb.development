@@ -20,6 +20,9 @@ DEFAULT_PHONE_NUMBER_FORMAT = "+81-3-9999-9999" unless defined? DEFAULT_PHONE_NU
 CONTACT_WEB_SITE_URL = 'https://researcher.ibm.com/researcher/view_page.php?id=2289' unless defined? CONTACT_WEB_SITE_URL
 CONTACT_EMAIL = 'ccca@us.ibm.com' unless defined? CONTACT_EMAIL
 
+DEPLOYMENT_YEAR = '2011' unless defined? DEPLOYMENT_YEAR
+DEPLOYMENT_ORGANIZATION_NAME = 'IBM Corp.' unless defined? DEPLOYMENT_ORGANIZATION_NAME
+
 LOGO_IMAGE_SIZE = '153x187' unless defined? LOGO_IMAGE_SIZE
 
 BITLY_URL = 'http://bit.ly/esKvbb' unless defined? BITLY_URL

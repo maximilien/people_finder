@@ -52,6 +52,14 @@ module ApplicationHelper
     CONTACT_EMAIL
   end
   
+  def deployment_year
+    DEPLOYMENT_YEAR
+  end
+  
+  def deployment_organization_name
+    DEPLOYMENT_ORGANIZATION_NAME
+  end
+  
   def logo_image_file_name
     'people_finder.png'
   end
