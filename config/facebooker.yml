@@ -6,8 +6,8 @@
 #
 
 development:
-  api_key: XXXX
-  secret_key: XXX
+  api_key: ee86d3486c96a43eb61e7a4eeeb6828a
+  secret_key: d70b7677f68fb38faf0dbc79ab674111
   canvas_page_name: japan_pf_dev
   callback_url: http://web1.tunnlr.com:10141/
   tunnel:
@@ -17,8 +17,8 @@ development:
     local_port: 4000
 
 test:
-  api_key: XXXX
-  secret_key: XXXX
+  api_key: ee86d3486c96a43eb61e7a4eeeb6828a
+  secret_key: d70b7677f68fb38faf0dbc79ab674111
   canvas_page_name: japan_pf_dev
   callback_url: http://web1.tunnlr.com:10141/
   tunnel:
@@ -28,8 +28,8 @@ test:
     local_port: 4000
 
 production:
-  api_key: XXXX
-  secret_key: XXXX
+  api_key: ee86d3486c96a43eb61e7a4eeeb6828a
+  secret_key: d70b7677f68fb38faf0dbc79ab674111
   canvas_page_name: japan_pf_dev
   callback_url: http://web1.tunnlr.com:10141/
   tunnel:
