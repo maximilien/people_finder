@@ -130,7 +130,7 @@ class ApplicationController < ActionController::Base
     if recent_stat.nil?
       recent_stat = create_stat
     else
-      recent_stat = create_stat if recent_stat.created_at <= 6.hours.ago
+      recent_stat = create_stat if recent_stat.created_at <= 12.hours.ago
     end
   end
   
