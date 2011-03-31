@@ -1,6 +1,7 @@
-== Welcome to people_finder application for Facebook
+== About People Finder on Facebook
 
-About People Finder
+Welcome to people_finder application for Facebook.
+
 The purpose of the Facebook People Finder is to help locate friends and family (we call them survivors because we are hopeful they are) who are lost during disasters.
 
 This application was first created for the Haiti Quake of Jan 12, 2010 and refactored/generalized and open-sourced to be released for the great quake of March 11, 2011 in the north of Japan.
@@ -24,3 +25,49 @@ See LICENSE file or here: http://goo.gl/s9uhf
 == Copyright
 
 (C) 2011 - IBM Corporation
+
+== Getting Started - Developer
+
+Follow this section to get started as a developer for People Finder on Facebook.  That is, getting the app up an running in development mode so you can start making changes (add new contributions or fix bugs).  A different Getting Started section will address deploying and maintaining an instance of the app.
+
+So, in four steps, this is how to get People Finder running in development mode on your machine.
+
+1. Development environment pre-requisites
+
+The people_finder Facebook application is written in Ruby on Rails (http://www.rubyonrails.org) and uses Facebooker (http://facebooker.rubyforge.org) as its Facebook API Ruby wrapper.
+
+As such, you need to have a RoR 2.3.2 environment setup.  This includes the following components as a minimum---listed versions are the one last tested.  Newer versions might work but would need testing and potential changes to address deprecation or version-related bugs.
+
+a. Ruby (1.8.7)
+b. gem (1.5.2)
+c. rake (0.8.7)
+c. The following gems:
+      acts_as_solr (1.3.3)
+      cgi_multipart_eof_fix (2.5.0)
+      daemons (1.1.0)
+      fastthread (1.0.7)
+      ferret (0.11.6)
+      gem_plugin (0.2.3)
+      icalendar (1.1.5)
+      mongrel (1.1.5)
+      mongrel_cluster (1.0.5)
+      mysql (2.8.1)
+      rake (0.8.7)
+d. RoR-compatible relational database.  The latest production environment used MySQL 5.4.1 on RedHat Linux
+
+Setting up the database is highly dependent on the type of database you choose.  MySQL is generally straightforward on most OSes.  See this download page for MySQL on your OS: http://dev.mysql.com/downloads/mysql/
+
+Setting up Ruby, gem, rake, associated gems, and database depends on development OS.  Generally the gems can be installed using $gem install <gem_name-version> but gem requires Ruby and rake.  The database gem, e.g., mysql, requires native development environment as well as the database to be already setup.
+
+If you are new to RoR development, the best way to get started is to google the following: "Setting up Ruby on Rails on <MyOS>" where <MyOS> is your OS, e.g., Windows, Linux, MacOS, and follow the latest blog posts on the subject.
+
+2. Facebook development setup
+
+3. Getting code and customizing your environment
+
+4. Running the app, making and submitting changes
+
+
+== Getting Started - Deployment
+
+TODO
