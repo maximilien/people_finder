@@ -32,7 +32,8 @@ Follow this section to get started as a developer for People Finder on Facebook.
 
 So, in four steps, this is how to get People Finder running in development mode on your machine.
 
-1. Development environment pre-requisites
+1. Development Environment Pre-requisites
+-----------------------------------------
 
 The people_finder Facebook application is written in Ruby on Rails (http://www.rubyonrails.org) and uses Facebooker (http://facebooker.rubyforge.org) as its Facebook API Ruby wrapper.
 
@@ -61,13 +62,27 @@ Setting up Ruby, gem, rake, associated gems, and database depends on development
 
 If you are new to RoR development, the best way to get started is to google the following: "Setting up Ruby on Rails on <MyOS>" where <MyOS> is your OS, e.g., Windows, Linux, MacOS, and follow the latest blog posts on the subject.
 
-2. Facebook development setup
+2. Facebook Development Setup
+-----------------------------
 
-3. Getting code and customizing your environment
+As a Facebook developer you need to have a Facebook account (http://www.facebook.com) and add the Facebook Developer application to your account, go here: http://www.facebook.com/developers.
 
-4. Running the app, making and submitting changes
+The easiest way to get started is to set up a new app on the Facebook Developers pages for this application.  You click on "Set Up New App" give it a name, e.g., people_finder_<your_short_name> or something similar.
+
+Setting up an app on Facebook essentially lets Facebook know about your app (on your server) and gives you some unique token that your app can use to communicate with Facebook.  These tokens are exchanged between Facebook and your app (and vice versa).  There are also various other settings for help pages, terms of services, and mobile enablement.  One of the key settings you want your application to have is that it uses FBML vs. iFrame.  Also, on the main page, take note of the following information: 1) canvas page name, the section after: http://apps.facebook.com/<canvas_name>, this is typically your app name, 2) application api key, and 3) application secret
 
 
-== Getting Started - Deployment
+
+
+3. Getting Code and Customizing your Environment
+------------------------------------------------
+
+
+
+4. Running the App Locally and Contributing Changes
+---------------------------------------------------
+
+
+== Getting Started - Deployment (Production)
 
 TODO
