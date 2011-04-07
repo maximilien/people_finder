@@ -26,11 +26,31 @@ See LICENSE file or here: http://goo.gl/s9uhf
 
 (C) 2011 - IBM Corporation
 
+== Internationalization (i18n) and Localization (l10n)
+
+One of the key places where anyone can contribute on this app right now is helping in the internationalization and localization for the views.
+
+The code is not currently setup for i18n or l10n since only English translation exist.  However, this can be done easily once we have a new translated set of views.
+
+So how does one create new views in a different language? Well, glad you asked, this is fairly easy.
+
+All views can be accessed here: https://github.com/maximilien/people_finder/tree/master/app/views 
+
+Most of the files are of the following pattern: <some_controller>/<some_view_name>.html.erb and are of course in English.  These files are view templates, so they include both English text and HTML and Ruby.  Any Ruby code is within <% %>
+
+A French translation would essentially be a new file that keeps all <% %> intact, all English text translated to French, and adjust the HTML (where needed) to match the fact that some text might need more or less space in French than in English---so adjusted formatting.
+
+Also the name would be: <some_controller>/<some_view_name>.fr.html.erb  So  for Japanese it would follow same idea but: <some_controller>/<some_view_name>.ja.html.erb --- the fr and ja shortcut are well known i18n shortcuts for languages, e.g.,English is en and Spanish is es.
+
+Since we early in the i18n process, I would not worry about l10n for now (that is, for instance dealing with different variants of one language, e.g., Canadian French vs. Parisian French etc).  These files once ready can be committed to GitHub, the process is a pull request: http://help.github.com/pull-requests/
+
+Once we get pull requests we can then enable i18n on the Rails app, perform some local testing, and enable the new views for deployed versions of the app---where appropriate.
+
 == Getting Started - Developer
 
 Follow this section to get started as a developer for People Finder on Facebook.  That is, getting the app up an running in development mode so you can start making changes (add new contributions or fix bugs).  A different Getting Started section will address deploying and maintaining an instance of the app.
 
-So, in four steps, this is how to get People Finder running in development mode on your machine.
+So, in four sub sections, this is how to get People Finder for Facebook running in development mode on your machine.
 
 1. Development Environment Pre-requisites
 -----------------------------------------
@@ -69,16 +89,19 @@ As a Facebook developer you need to have a Facebook account (http://www.facebook
 
 The easiest way to get started is to set up a new app on the Facebook Developers pages for this application.  You click on "Set Up New App" give it a name, e.g., people_finder_<your_short_name> or something similar.
 
-Setting up an app on Facebook essentially lets Facebook know about your app (on your server) and gives you some unique token that your app can use to communicate with Facebook.  These tokens are exchanged between Facebook and your app (and vice versa).  There are also various other settings for help pages, terms of services, and mobile enablement.  One of the key settings you want your application to have is that it uses FBML vs. iFrame.  Also, on the main page, take note of the following information: 1) canvas page name, the section after: http://apps.facebook.com/<canvas_name>, this is typically your app name, 2) application api key, and 3) application secret
+Setting up an app on Facebook essentially lets Facebook know about your app (on your server) and gives you some unique tokens that your app can use to communicate with Facebook.  These tokens are exchanged between Facebook and your app (and vice-versa).  There are also various other settings for help pages, terms of services, and mobile enablement.  
 
-The last piece of information that you need to add to your newly created Facebook application is the Canvas URL.  This is a URL (reachable by Facebook servers) on the public internet where your application resides.
+One of the key settings you want your application to have is that it uses FBML (not iFrame).  Also, on the main page, take note of the following information: 1) canvas page name, the section after: http://apps.facebook.com/<canvas_name>, this is typically your app name, 2) application api key, and 3) application secret.  You will need these for the next sub-section.
 
-If you are running your development on a machine who is connected to the public internet and has a public IP then this URL will be that IP address : the port number where you run the app in section 3.  For instance, http://<my-ip-address>:3000/
+The last piece of information that you need to add to your newly created Facebook application is the Canvas URL.  This is a URL (reachable by Facebook servers) on the public internet where your application resides and runs.
 
-There are various techniques to overcome the issue of not having a public IP address (say you are within a company VPN or local VPN).  The easiest one I found is to get an account at http://tunnlr.com/.  Once you get your account, in the next section, we'll discuss how to set that up in the app configuration.
+If you are running your development on a machine who is connected to the public internet and has a public IP then this URL will be that IP address : the port number where you run the app in sub-section 3.  For instance, http://<my-ip-address>:3000/
+
+NOTE: there are various techniques to overcome the issue of not having a public IP address (say you are within a company VPN or local VPN).  The easiest one I found is to get an account at http://tunnlr.com/.  If you follow this route, in the next section, we'll discuss how to set up your Tunnlr.com account info in the app configuration.
 
 3. Getting Code and Customizing your Environment
 ------------------------------------------------
+
 
 
 
