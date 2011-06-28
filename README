@@ -90,6 +90,7 @@ As a Facebook developer you need to have a Facebook account (http://www.facebook
 The easiest way to get started is to set up a new app on the Facebook Developers pages for this application.  You click on "Set Up New App" give it a name, e.g., people_finder_<your_short_name> or something similar.
 
 Setting up an app on Facebook essentially lets Facebook know about your app (on your server) and gives you some unique tokens that your app can use to communicate with Facebook.  These tokens are exchanged between Facebook and your app (and vice-versa).  There are also various other settings for help pages, terms of services, and mobile enablement.  
+<<<<<<< HEAD
 
 One of the key settings you want your application to have is that it uses FBML (not iFrame).  Also, on the main page, take note of the following information: 1) canvas page name, the section after: http://apps.facebook.com/<canvas_name>, this is typically your app name, 2) application api key, and 3) application secret.  You will need these for the next sub-section.
 
@@ -97,6 +98,15 @@ The last piece of information that you need to add to your newly created Faceboo
 
 If you are running your development on a machine who is connected to the public internet and has a public IP then this URL will be that IP address : the port number where you run the app in sub-section 3.  For instance, http://<my-ip-address>:3000/
 
+=======
+
+One of the key settings you want your application to have is that it uses FBML (not iFrame).  Also, on the main page, take note of the following information: 1) canvas page name, the section after: http://apps.facebook.com/<canvas_name>, this is typically your app name, 2) application api key, and 3) application secret.  You will need these for the next sub-section.
+
+The last piece of information that you need to add to your newly created Facebook application is the Canvas URL.  This is a URL (reachable by Facebook servers) on the public internet where your application resides and runs.
+
+If you are running your development on a machine who is connected to the public internet and has a public IP then this URL will be that IP address : the port number where you run the app in sub-section 3.  For instance, http://<my-ip-address>:3000/
+
+>>>>>>> various info on how to get development environment and get started
 NOTE: there are various techniques to overcome the issue of not having a public IP address (say you are within a company VPN or local VPN).  The easiest one I found is to get an account at http://tunnlr.com/.  If you follow this route, in the next section, we'll discuss how to set up your Tunnlr.com account info in the app configuration.
 
 3. Getting Code and Customizing your Environment
